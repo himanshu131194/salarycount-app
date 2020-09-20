@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import Template from './../template.js'
 import postsRoutes from './routes/posts.routes'
 import cors from 'cors'
-import './services/cache'
+// import './services/cache'
 
 const app = express();
 

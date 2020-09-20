@@ -2,10 +2,7 @@ import React, { Component, Fragment, Suspense, lazy } from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Header from './components/collection/Partials/Header';
-import VideosByProfile from './components/collection/VideosByProfile'
-import Profiles from './components/collection/Profiles';
-import Websites from './components/collection/Websites';
-import AllVideos from './components/collection/Videos/List'
+import Main from './components/collection/Main';
 
 class MainRouter extends Component{
 	  render(){
@@ -14,11 +11,7 @@ class MainRouter extends Component{
 			   <Header/>
 			   <Router>
 					<Switch>
-						<Route exact path="/" component={AllVideos}/>
-						<Route exact path="/models" component={Profiles}/>
-						<Route exact path="/models/:id" component={VideosByProfile}/>
-						<Route exact path="/websites" component={Websites}/>
-						<Route exact path="/websites/:id" component={AllVideos}/>
+						<Route exact path="/" component={Main}/>
 					</Switch>
 			   </Router>
              </Fragment>

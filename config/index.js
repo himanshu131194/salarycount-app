@@ -1,11 +1,12 @@
 export default {
    env : process.env.NODE_ENV || 'development',
-   port : process.env.PORT || 3000,
-   API_URL: "http://localhost:3000",
+   port : process.env.PORT || 8080,
+   API_URL: "http://localhost:8080",
    // API_URL: "http://192.168.0.132:3000",
    // API_URL: "https://notinmood.com",
    // MONGO_URI : 'mongodb+srv://notinmood:notinmood123@cluster0-57jsn.mongodb.net/notinmood?retryWrites=true&w=majority',
-   MONGO_URI: "mongodb://boobsboy:boobsboylovesit@128.199.20.103:27017/boobsboy",
+   // mongodb+srv://salarycount:salarycount12345@cluster0.szwfu.mongodb.net/salarycount?retryWrites=true&w=majority
+   MONGO_URI: "mongodb+srv://salarycount:salarycount12345@cluster0.szwfu.mongodb.net/salarycount?retryWrites=true&w=majority",
    COOKIEKEY: 'mycookiesecret',
    REDIS:{
       URL: "redis://127.0.0.1:6379"
@@ -38,10 +39,10 @@ export default {
       }
    },
    S3:{
-      BUCKET : 'notinmood',
-      URL : 'https://notinmood.s3.ap-south-1.amazonaws.com',
-      ACCESS: 'AKIA3YIPQLXVUSE5T2BI',
-      SECRET: '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'
+      BUCKET : 'salarycount',
+      URL : 'https://salarycount.s3.ap-south-1.amazonaws.com',
+      ACCESS: 'AKIA3YIPQLXVWGII6REH',
+      SECRET: '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'
    },
    LOGIN_KEYS:{
         GOOGLE:{
