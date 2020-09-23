@@ -7,8 +7,10 @@ import Company from '../models/companies.model'
 
 import Courses from '../models/courses/courses'
 import Authors from '../models/courses/authors'
-import Caterogies from '../models/courses/caterogies'
-import subCaterogies from '../models/courses/sub_caterogies'
+import Caterogies from '../models/courses/categories'
+import subCaterogies from '../models/courses/sub_categories'
+import Videos from '../models/courses/videos'
+
 
 const path = require('path')
 
@@ -44,7 +46,7 @@ const uploadToS3 = async (externalUrl=null, data64=null, path='uploads', uploadT
         }else{
                 try {
                     console.log("externalUrl-", externalUrl);
-                    result = await rp({url: "https://static.ambitionbox.com/alpha/company/photos/logos/tcs.jpg", encoding: null});
+                    result = await rp({url: externalUrl, encoding: null});
                     console.log("result-", result)
                 } catch (error) {
                   console.log("eror in repsonce promsie")
@@ -184,8 +186,10 @@ export default {
 
     updateCourses : async (req, res)=>{
         console.log(req.body);
+        const { course } = req.body;
 
         let updateCategories = async (category)=>{
+            if(!category){ return category }
             const updated = await Caterogies.findOneAndUpdate({ name: category.trim() }, {
                 $inc: { count: 1 }
             }, { upsert : true , new: true});
@@ -193,6 +197,7 @@ export default {
         }
 
         let updatesubCategories = async (sub_category)=>{
+            if(!sub_category){ return sub_category }
             const updated = await subCaterogies.findOneAndUpdate({ name: sub_category.trim() }, {
                 $inc: { count: 1 }
             }, { upsert : true , new : true });
@@ -200,6 +205,9 @@ export default {
         }
 
         let updateTags = async (tags)=>{
+            if(tags.length==0){
+                return []
+            };
             let k = [];
             for(let x of tags){
                 const updated = await Tags.findOneAndUpdate({ name: x.trim() }, {
@@ -211,7 +219,7 @@ export default {
         }
 
         const isExits = await Courses.findById(mongoose.Types.ObjectId(req.body.course_id));
-        let posterOriginal = await uploadToS3(data.poster_thumb, null, 'courses/posters/original');
+        let posterOriginal = await uploadToS3(req.body.poster_original, null, 'courses/posters/original');
         let poster = Object.assign(isExits.poster, {
             original:{ 
                 url: posterOriginal.s3_url,
@@ -229,12 +237,12 @@ export default {
         const videosResult = await videos.save();
 
         const result = await Courses.findOneAndUpdate({_id: isExits._id},{
-            description: req.body.description.trim(),
+            description: req.body.description? req.body.description.trim() : '',
             totalLessons: parseInt(req.body.total_lessions),
             poster,
-            category: await updateCategories(req.body.category),
-            subCategory: await updatesubCategories(req.body.sub_category),
-            tags: await updateTags(req.body.tags),
+            category: await updateCategories(req.body.course.category),
+            subCategory: await updatesubCategories(req.body.course.sub_category),
+            tags: await updateTags(req.body.course.tags),
             lessons: videosResult._id
         },{ new: true });
 

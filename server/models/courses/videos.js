@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import CONFIG from '../../../config';
 const {DB} = CONFIG;
 
-const Categories = new mongoose.Schema({
+const Videos = new mongoose.Schema({
     courseId : {
         type: mongoose.Schema.ObjectId,
         ref: 'courses'
@@ -20,4 +20,4 @@ const Categories = new mongoose.Schema({
     }
 })
 
-export default mongoose.model('categories', Categories, 'categories');
+export default mongoose.model('videos', Videos, 'videos');
