@@ -1,17 +1,13 @@
 import mongoose from 'mongoose'
-import CONFIG from '../../config';
+import CONFIG from '../../../config';
 const {DB} = CONFIG;
 
-const Categories = new mongoose.Schema({
+const Tags = new mongoose.Schema({
     name : {
         type: String,
         required: true
     },
-    videos_count : {
-        type: Number, 
-        default : DB.DEFAULT_COUNT 
-    },
-    videos_downloaded : {
+    count : {
         type: Number, 
         default : DB.DEFAULT_COUNT 
     },
@@ -27,4 +23,4 @@ const Categories = new mongoose.Schema({
     }
 })
 
-export default mongoose.model('categories', Categories);
+export default mongoose.model('tags', Tags, 'tags');

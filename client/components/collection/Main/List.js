@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../../actions'
 import _ from "lodash";
+import Pagination from './Pagination';
 
 class List extends Component{
       render(){
@@ -88,6 +89,9 @@ class List extends Component{
                     </div>
                     </a>
                 {/* END COURSE CARD */}
+
+                {/* PAGINATION */}
+                <Pagination/>
           </Fragment>
         )
       }
