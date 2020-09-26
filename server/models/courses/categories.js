@@ -11,6 +11,12 @@ const Categories = new mongoose.Schema({
         type: Number, 
         default : DB.DEFAULT_COUNT 
     },
+    subCategory:[
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'sub_categories'
+        }
+    ],
     created: {
         type: Date,
         default: Date.now

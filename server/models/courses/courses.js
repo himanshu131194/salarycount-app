@@ -28,6 +28,9 @@ const Courses = new mongoose.Schema({
             path: { type: String}
          }
     },
+    summary:{
+        type: String
+    },
     category: {
         type: mongoose.Schema.ObjectId,
         ref: 'categories'
@@ -44,10 +47,10 @@ const Courses = new mongoose.Schema({
         type: Number, 
         default : DB.DEFAULT_COUNT 
     },
-    tags: {
+    tags: [{
         type: mongoose.Schema.ObjectId,
         ref: 'tags'
-    },
+    }],
     description: {
         type: String
     },

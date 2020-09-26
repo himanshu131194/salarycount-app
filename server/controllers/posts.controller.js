@@ -2,7 +2,7 @@ import IndustriesTypes from '../models/industries_types.model'
 import Locations from '../models/locations.model'
 import Ratingrange from '../models/rating_range.model'
 import employeesCountRange from '../models/employees_count_range.model'
-import Tags from '../models/industries_tags.model'
+import Tags from '../models/courses/tags'
 import Company from '../models/companies.model'
 
 import Courses from '../models/courses/courses'
@@ -113,6 +113,12 @@ export default {
     crawledCourses: async (req, res)=>{
         console.log(req.body);
         const { data, page } = req.body;
+
+        const isAlredyThr = await Courses.findOne({ title: data.title, courseCreated: data.course_created, totalHours: data.total_time })
+
+        if(isAlredyThr){
+            return res.send(isAlredyThr)
+        }
         // page: 'https://tutsplus.com/courses',
         // data: {
         // //   free: true,
@@ -147,6 +153,7 @@ export default {
                         path: ''
                     }
                 },
+                $inc: { coursesCount: 1 } 
             }, { new: true, upsert: true });
             return [result._id];
         }
@@ -188,11 +195,15 @@ export default {
         console.log(req.body);
         const { course } = req.body;
 
-        let updateCategories = async (category)=>{
+        let updateCategories = async (category, sub_category)=>{
             if(!category){ return category }
+
+            const addNewsubCategory = await subCaterogies.findOne({name: sub_category.trim()})
             const updated = await Caterogies.findOneAndUpdate({ name: category.trim() }, {
-                $inc: { count: 1 }
+                $inc: { count: 1 },
+                $push: { subCategory: mongoose.Types.ObjectId(addNewsubCategory._id) } 
             }, { upsert : true , new: true});
+
             return updated._id;
         }
 
@@ -227,21 +238,29 @@ export default {
                 file: posterOriginal.slug_id+"."+posterOriginal.ext,
                 path: posterOriginal.path
              }
-        }) 
+        });
+
+        //UPDATE AUTHORS
+        let updateAuthors = await Authors.findOneAndUpdate({_id: mongoose.Types.ObjectId((isExits.authors)[0])},{
+            about: req.body.author_bio.trim()
+        },{ new : true });
+        
 
         //UPDATE VIDEOS 
         const videos = new Videos({
             course_id: mongoose.Types.ObjectId(isExits._id),
-            videos: req.body.lessions
+            videos: req.body.lessons
         }); 
         const videosResult = await videos.save();
 
         const result = await Courses.findOneAndUpdate({_id: isExits._id},{
-            description: req.body.description? req.body.description.trim() : '',
-            totalLessons: parseInt(req.body.total_lessions),
+            description: req.body.course.description? req.body.course.description.trim() : '',
+            totalLessons: parseInt(req.body.course.total_lessons),
+            totalSections: Object.keys(req.body.lessons).length,
+            summary: req.body.post_teaser,
             poster,
-            category: await updateCategories(req.body.course.category),
             subCategory: await updatesubCategories(req.body.course.sub_category),
+            category: await updateCategories(req.body.course.category, req.body.course.sub_category),
             tags: await updateTags(req.body.course.tags),
             lessons: videosResult._id
         },{ new: true });
@@ -262,36 +281,36 @@ export default {
     //       tags: [ 'javascript', 'react', 'static websites', 'graphql', 'gatsby' ],
     //       category: 'code',
     //       sub_category: 'javascript',
-    //       total_lessions: '1.2 hours',
+    //       total_lessons: '1.2 hours',
     //       description: '<p>Gatsby is a static-site generator that lets you build data-driven websites that are blazing fast. Behind the scenes, Gatsby uses React, and GraphQL to let you pull data from any data source.</p>\n' +
     //         '\n' +
     //         '<p>Join Jeremy McPeak as he teaches you how to get started with Gatsby. Follow along and build a simple app from start to finish, complete with a GraphQL data source.</p>\n'
     //     },
     //     poster_original: 'https://embed-fastly.wistia.com/deliveries/2fabd0cbdefa5884ce47b69fd8bbe75d.webp?image_crop_resized=960x540',
-    //     lessions: {
+    //     lessons: {
     //       chapter_1: {
     //         title: 'introduction',
     //         total_time: '08:16',
-    //         total_lessions: '2',
-    //         lessions: [Array]
+    //         total_lessons: '2',
+    //         lessons: [Array]
     //       },
     //       chapter_2: {
     //         title: 'basic concepts',
     //         total_time: '24:50',
-    //         total_lessions: '3',
-    //         lessions: [Array]
+    //         total_lessons: '3',
+    //         lessons: [Array]
     //       },
     //       chapter_3: {
     //         title: 'working with data',
     //         total_time: '33:22',
-    //         total_lessions: '4',
-    //         lessions: [Array]
+    //         total_lessons: '4',
+    //         lessons: [Array]
     //       },
     //       chapter_4: {
     //         title: 'conclusion',
     //         total_time: '03:36',
-    //         total_lessions: '1',
-    //         lessions: [Array]
+    //         total_lessons: '1',
+    //         lessons: [Array]
     //       }
     //     },
     //     author_bio: "I started my development career on the client-side writing JavaScript and DHTML components in my spare time. In 2005, Nicholas C. Zakas asked me to join him in writing the first edition of Professional Ajax for Wiley Publishing. Since Professional Ajax, 1st Edition, I've been blessed to take part in other book projects: Professional Ajax 2nd Edition, and Beginning JavaScript 3rd and 4th editions."
@@ -659,3 +678,9 @@ export default {
 
 
 
+
+// https://cms-assets.tutsplus.com/cdn-cgi/image/width=400,height=400/uploads/users/71/courses/1253/preview_image/wordpress-seo-without-plugins-400x277.png 400w, 
+// https://cms-assets.tutsplus.com/cdn-cgi/image/width=380,height=380/uploads/users/71/courses/1253/preview_image/wordpress-seo-without-plugins-400x277.png 380w, 
+// https://cms-assets.tutsplus.com/cdn-cgi/image/width=190,height=190/uploads/users/71/courses/1253/preview_image/wordpress-seo-without-plugins-400x277.png 190w, 
+// https://cms-assets.tutsplus.com/cdn-cgi/image/width=152,height=152/uploads/users/71/courses/1253/preview_image/wordpress-seo-without-plugins-400x277.png 152w, 
+// https://cms-assets.tutsplus.com/cdn-cgi/image/width=76,height=76/uploads/users/71/courses/1253/preview_image/wordpress-seo-without-plugins-400x277.png 76w

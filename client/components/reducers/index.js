@@ -1,8 +1,7 @@
 import {combineReducers} from 'redux'
-import {listOfProfilesReducer, listOfVideosByProfileReducer, listOfDataByProfileReducer} from './reducers'
+import {listOfCoursesReducer, listOfFiltersReducer} from './reducers'
 
 export default combineReducers({
-	  listOfProfiles :  listOfProfilesReducer,
-	  listOfVideosByProfile: listOfVideosByProfileReducer,
-	  listOfDataByProfile: listOfDataByProfileReducer
+	  listOfCourses :  listOfCoursesReducer,
+	  listOfFilters :  listOfFiltersReducer
 })

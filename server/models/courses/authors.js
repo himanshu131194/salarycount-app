@@ -7,8 +7,8 @@ const Authors = new mongoose.Schema({
         type: String,
         required: true
     },
-    profile : {
-        thunb : {
+    poster : {
+        thumb : {
             url: { type: String},
             bucket: { type: String},
             file: { type: String},
