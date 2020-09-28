@@ -46,19 +46,31 @@ export default {
     
     listOfCategoriesAndSubcategories: async (req, res)=>{
         const { filters={} } = req.query;
+        console.log(filters)
         let filterObj = {};
 
         if(filters.condition){
-            filterObj = filters.condition
+            console.log("filters")
+            filters.condition.id && (filterObj._id = mongoose.Types.ObjectId(filters.condition.id) )
         }
 
+        console.log(filterObj);
         try {
             //CATEGORIES 
             let categories = await Caterogies.find({});
             //SUBCATEGORIES
-            let subCategories = await subCaterogies.aggregate([
-                {$match: filterObj}
+            let subCategories = await Caterogies.aggregate([
+                { $match : filterObj },
+                {
+                     $lookup: {
+                         from: 'sub_categories',
+                         localField: 'subCategory',
+                         foreignField: '_id',
+                         as: 'subCategoies'
+                     }
+                 },
             ]);
+            console.log(subCategories);
             res.send({
                 data: { categories, subCategories}
              //    count : totalProfiles

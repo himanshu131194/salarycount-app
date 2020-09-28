@@ -5,8 +5,12 @@ import List from './List'
 import _ from "lodash";
 
 class Main extends Component{
+    filters = {
+        condition : { }
+    }
     componentDidMount(){
-        this.props.loadAllFilters({ id : '5f7038746dd75df4e428927d'}, ()=>{
+        this.filters.condition.id = '5f7038746dd75df4e428927d';
+        this.props.loadAllFilters(this.filters, ()=>{
             console.log(this.props);
         })
     }
