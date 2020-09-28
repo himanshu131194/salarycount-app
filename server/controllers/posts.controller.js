@@ -165,6 +165,7 @@ export default {
             isCost: data.free,
             title: data.title.trim(),
             courseUrl,
+            summary: data.post_teaser.trim(),
             poster:{
                 thumb:{ 
                     url: data.poster_thumb,
@@ -179,6 +180,7 @@ export default {
                     path: ''
                  }
             },
+            level:0,
             courseCreated: data.course_created,
             totalHours: data.total_time,
             authors: await getAuthor(data.author, data.author_url, data.author_thumb, data.author_original)
@@ -198,11 +200,19 @@ export default {
         let updateCategories = async (category, sub_category)=>{
             if(!category){ return category }
 
-            const addNewsubCategory = await subCaterogies.findOne({name: sub_category.trim()})
+            const addNewsubCategory = await subCaterogies.findOne({name: sub_category.trim()});
+
             const updated = await Caterogies.findOneAndUpdate({ name: category.trim() }, {
                 $inc: { count: 1 },
-                $push: { subCategory: mongoose.Types.ObjectId(addNewsubCategory._id) } 
-            }, { upsert : true , new: true});
+            }, { upsert: true , new: true});
+
+            const isSubCategory = await Caterogies.findOne({ name: category, subCategory: {$in: mongoose.Types.ObjectId(addNewsubCategory._id) } })
+            
+            if(!isSubCategory){
+                await Caterogies.findOneAndUpdate({ _id: updated._id }, {
+                    $push: { subCategory: mongoose.Types.ObjectId(addNewsubCategory._id) } 
+                }, { upsert: true , new: true});
+            }
 
             return updated._id;
         }
@@ -257,7 +267,6 @@ export default {
             description: req.body.course.description? req.body.course.description.trim() : '',
             totalLessons: parseInt(req.body.course.total_lessons),
             totalSections: Object.keys(req.body.lessons).length,
-            summary: req.body.post_teaser,
             poster,
             subCategory: await updatesubCategories(req.body.course.sub_category),
             category: await updateCategories(req.body.course.category, req.body.course.sub_category),

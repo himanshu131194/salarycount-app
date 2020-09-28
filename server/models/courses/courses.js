@@ -43,6 +43,10 @@ const Courses = new mongoose.Schema({
         type: Number, 
         default : DB.DEFAULT_COUNT 
     },
+    level:{
+        type:Number,
+        default:CONFIG.DB.LEVEL.BEGINNER
+    },
     totalLessons:{
         type: Number, 
         default : DB.DEFAULT_COUNT 

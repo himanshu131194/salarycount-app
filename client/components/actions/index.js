@@ -26,12 +26,13 @@ export const loadAllCourses = ({limit, offset, filters}, cb)=>{
 }
 
 
-export const loadAllFilters = (cb)=>{
+export const loadAllFilters = (filters={}, cb)=>{
     return async (dispatch)=>{
            let err = null, result = []
            try{
             let {data} = await axios.get(`${CONFIG.API_URL}/api/filters-list`, {
                 params : {
+                    filters
                 }
             });
             result = data.data

@@ -36,6 +36,11 @@ export default {
          TWO : 2, //20 - 30
          THREE : 3, //30 - 40
          FOUR : 4, //40 - 50+
+      },
+      LEVEL:{
+         BEGINNER : 0, 
+         INTERMEDIATE : 1, 
+         ADVANCED : 2, 
       }
    },
    S3:{

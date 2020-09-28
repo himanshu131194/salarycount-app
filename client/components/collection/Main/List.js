@@ -33,7 +33,7 @@ class List extends Component{
                                 <img className="img-fluid w-100 rounded" src={course.poster.thumb.url} alt="Image Description"/>
     
                                 <div className="position-absolute top-0 left-0 mt-3 ml-3">
-                                <small className="btn btn-xs btn-success btn-pill text-uppercase shadow-soft py-1 px-2 mb-3">Bestseller</small>
+                                <small className="btn btn-xs btn-success text-uppercase shadow-soft py-1 px-2 mb-3">free</small>
                                 </div>
     
                                 <div className="position-absolute bottom-0 left-0 mb-3 ml-4">
@@ -97,7 +97,7 @@ class List extends Component{
                                 </div>
                             </div>
     
-                            <p className="font-size-1 text-body mb-0">Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!</p>
+                            <p className="font-size-1 text-body mb-0">{course.summary}</p>
 
                             </div>
                         </div>

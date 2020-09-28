@@ -45,11 +45,20 @@ export default {
     },
     
     listOfCategoriesAndSubcategories: async (req, res)=>{
+        const { filters={} } = req.query;
+        let filterObj = {};
+
+        if(filters.condition){
+            filterObj = filters.condition
+        }
+
         try {
             //CATEGORIES 
             let categories = await Caterogies.find({});
             //SUBCATEGORIES
-            let subCategories = await subCaterogies.find({});
+            let subCategories = await subCaterogies.aggregate([
+                {$match: filterObj}
+            ]);
             res.send({
                 data: { categories, subCategories}
              //    count : totalProfiles

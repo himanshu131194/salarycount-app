@@ -6,7 +6,7 @@ import _ from "lodash";
 
 class Main extends Component{
     componentDidMount(){
-        this.props.loadAllFilters(()=>{
+        this.props.loadAllFilters({ id : '5f7038746dd75df4e428927d'}, ()=>{
             console.log(this.props);
         })
     }
@@ -22,7 +22,7 @@ class Main extends Component{
                             <h2 className="h4"><a className="text-inherit" href="#">Course Categories</a></h2>
                             {this.props.listOfFilters && this.props.listOfFilters.categories.map((category)=>{
                                return(
-                                <a className="dropdown-item d-flex justify-content-between align-items-center px-0 text-capitalize" href="#">
+                                <a key={category._id} className="dropdown-item d-flex justify-content-between align-items-center px-0 text-capitalize" href="#">
                                     {category.name}
                                  <span className="badge bg-soft-secondary badge-pill">{category.count}</span>
                                 </a>
@@ -72,10 +72,10 @@ class Main extends Component{
                             </a> */}
                             {this.props.listOfFilters && this.props.listOfFilters.subCategories.map((sub_category)=>{
                                 return(
-                                    <a className="dropdown-item d-flex justify-content-between align-items-center px-0 text-capitalize" href="#">
-                                     {sub_category.name}
-                                <span className="badge bg-soft-secondary badge-pill">{sub_category.count}</span>
-                                </a>
+                                    <a key={sub_category._id} className="dropdown-item d-flex justify-content-between align-items-center px-0 text-capitalize" href="#">
+                                        {sub_category.name}
+                                        <span className="badge bg-soft-secondary badge-pill">{sub_category.count}</span>
+                                    </a>
                                 )
                             })}
                              {/* <a className="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
