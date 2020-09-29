@@ -1,10 +1,12 @@
 
+import mongoose from 'mongoose'
 import Tags from '../models/courses/tags'
 import Courses from '../models/courses/courses'
 import Authors from '../models/courses/authors'
 import Caterogies from '../models/courses/categories'
 import subCaterogies from '../models/courses/sub_categories'
 import Videos from '../models/courses/videos'
+
 
 export default {
     listOfAllCourses: async (req, res)=>{
@@ -45,11 +47,11 @@ export default {
     },
     
     listOfCategoriesAndSubcategories: async (req, res)=>{
-        const { filters={} } = req.query;
-        console.log(filters)
+        let { filters={} } = req.query;
+        (typeof filters === 'string') && (filters = JSON.parse(filters))
         let filterObj = {};
 
-        if(filters.condition){
+        if(filters['condition']){
             console.log("filters")
             filters.condition.id && (filterObj._id = mongoose.Types.ObjectId(filters.condition.id) )
         }
@@ -57,25 +59,30 @@ export default {
         console.log(filterObj);
         try {
             //CATEGORIES 
-            let categories = await Caterogies.find({});
+            let categories = await Caterogies.aggregate([
+                { $match: { }},
+                { $project: { name: 1, count: 1 }}
+            ]);
             //SUBCATEGORIES
-            let subCategories = await Caterogies.aggregate([
+            let [{ subCategories }] = await Caterogies.aggregate([
                 { $match : filterObj },
                 {
                      $lookup: {
                          from: 'sub_categories',
                          localField: 'subCategory',
                          foreignField: '_id',
-                         as: 'subCategoies'
+                         as: 'subCategories'
                      }
                  },
+                 {$project: { subCategories: 1 }}
             ]);
-            console.log(subCategories);
+            console.log(categories);
             res.send({
                 data: { categories, subCategories}
              //    count : totalProfiles
             })
         } catch (error) {
+            console.log(error)
             res.send({
                 error
             })

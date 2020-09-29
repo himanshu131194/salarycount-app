@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Header from './components/collection/Partials/Header';
 import Main from './components/collection/Main';
+import Course from './components/collection/Course';
 
 class MainRouter extends Component{
 	  render(){
@@ -12,6 +13,7 @@ class MainRouter extends Component{
 			   <Router>
 					<Switch>
 						<Route exact path="/" component={Main}/>
+						<Route exact path="/courses/:id" component={Course}/>
 					</Switch>
 			   </Router>
              </Fragment>
