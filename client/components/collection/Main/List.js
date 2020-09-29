@@ -27,7 +27,7 @@ class List extends Component{
                 {/* COURSE CARD */}
                 {this.props.listOfCourses && this.props.listOfCourses.map((course)=>{
                     return(
-                        <Link className="d-block border-bottom pb-5 mb-5" to={`courses/${course.courseUrl}`}>
+                        <Link className="d-block border-bottom pb-5 mb-5" to={`/courses${course.courseUrl}`}>
                         <div className="row mx-md-n2">
                             <div className="col-md-4 px-md-2 mb-3 mb-md-0">
                             <div className="position-relative">

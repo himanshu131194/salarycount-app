@@ -22,44 +22,40 @@ class Main extends Component{
     }
     render(){
         return(
-            <div className="container space-2 space-bottom-lg-3">
-            <div className="row">
-                <div className="col-lg-3 mb-5 mb-lg-0">
-                    <div className="navbar-expand-lg navbar-expand-lg-collapse-block">
-                    
-                    <div id="sidebarNav" className="navbar-collapse collapse">
-                        <div className="mt-5 mt-lg-0">
-                            <h2 className="h4"><a className="text-inherit" href="#">Course Categories</a></h2>
-                            {this.props.listOfFilters && this.props.listOfFilters.categories.map((category)=>{
-                               let id = category._id;
-                               return(
-                                <a key={category._id} className="dropdown-item d-flex justify-content-between align-items-center px-0 text-capitalize" href="#" onClick={()=>{this.onSelectCategory(id)}}>
-                                    {category.name}
-                                 <span className="badge bg-soft-secondary badge-pill">{category.count}</span>
-                                </a>
-                               )
-                            })}
-                        </div>
-    
-                        <div className="mt-5">
-                            <h3 className="h4"><a className="text-inherit" href="#">Sub Catergories</a></h3>
-                            {this.props.listOfFilters && this.props.listOfFilters.subCategories.map((sub_category)=>{
-                                return(
-                                    <a key={sub_category._id} className="dropdown-item d-flex justify-content-between align-items-center px-0 text-capitalize" href="#">
-                                        {sub_category.name}
-                                        <span className="badge bg-soft-secondary badge-pill">{sub_category.count}</span>
-                                    </a>
-                                )
-                            })}
+            <main id="content" role="main">
+                <div className="position-relative">
+                    <div className="gradient-y-overlay-lg-white bg-img-hero space-2" style={{backgroundImage: '/img/1920x800/img10.jpg'}}>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-7 col-lg-8"> <small className="btn btn-xs btn-success btn-pill text-uppercase mb-2">Bestseller</small>
+                                    <h1 className="text-lh-sm">Complete Python Bootcamp: Go from zero to hero in Python 3</h1>
+                                    <p>Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!</p>
+                                    <div className="d-flex align-items-center flex-wrap">
+                                        {/* <!-- Authors --> */}
+                                        <div className="d-flex align-items-center mr-4">
+                                            <div className="avatar-group"> <span className="avatar avatar-xs avatar-circle">
+                                        <img className="avatar-img" src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=400,height=400/uploads/users/16/profiles/265/profileImage/iIGn1N2b.jpg" alt="Image Description"/>
+                                        </span> </div> <span className="pl-2">Created by <a className="link-underline" href="author.html">Nataly Gaga</a></span> </div>
+                                        {/* <!-- End Authors --> */}
+                                        {/* <!-- Rating --> */}
+                                        <div className="d-flex align-items-center flex-wrap">
+                                            <ul className="list-inline mt-n1 mb-0 mr-2">
+                                                <li className="list-inline-item mx-0"><img src="/img/star.svg" alt="Review rating" width="16"/></li>
+                                                <li className="list-inline-item mx-0"><img src="/img/star.svg" alt="Review rating" width="16"/></li>
+                                                <li className="list-inline-item mx-0"><img src="/img/star.svg" alt="Review rating" width="16"/></li>
+                                                <li className="list-inline-item mx-0"><img src="/img/star.svg" alt="Review rating" width="16"/></li>
+                                                <li className="list-inline-item mx-0"><img src="/img/star-half.svg" alt="Review rating" width="16"/></li>
+                                            </ul> <span className="d-inline-block">
+                                        <span className="text-dark font-weight-bold mr-1">4.87</span> <span className="text-muted">(1.5k+ reviews)</span> </span>
+                                        </div>
+                                        {/* <!-- End Rating --> */}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-    
-                    </div>
                 </div>
-                <div className="col-lg-9">
-                </div>
-            </div>
-        </div>
+            </main>
         )
     }
 }
