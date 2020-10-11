@@ -122,7 +122,7 @@ export default {
                  }
              }
         ]);
-        console.log(course.lessons.videos.chapter_1.lessons);
+        console.log(course.lessons.videos.chapter_2.lessons);
         res.send(courseTemplate(course));
     }
 }

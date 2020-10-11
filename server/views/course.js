@@ -46,13 +46,36 @@ export default (COURSE)=>{
     }
 
     let courseContent = (lessons)=>{
+        let lessonsContent = (chapters)=>{
+            let displayString = '';
+            for(let chapter of chapters){
+                displayString += 
+                    `<div class="border-bottom py-3 pr-3 pl-6">
+                        <div class="row">
+                            <div class="col-8"> 
+                                <span class="media text-body font-size-1 mr-5">
+                                    <i class="fa fa-play-circle min-w-3rem text-center opacity-lg mt-1 mr-2 ml-1"></i>
+                                    <span class="media-body"><span class="text-capitalize">${chapter.title}</span> </span>
+                                </span>
+                            </div>
+                            <div class="col-4 text-right">
+                                <div class="row">
+                                    <div class="col-lg-6"> </div>
+                                    <div class="col-lg-6"> <span class="font-size-1">${chapter.total_time}</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+            }
+            return displayString;
+        }
         console.log(lessons);
         let displayString = '', count=1;
         for(let section in lessons){
             displayString += `
             <div class="card border mb-1">
-            <div class="card-header card-collapse" id="coursesHeadingThree">
-                <a class="btn btn-link btn-sm btn-block card-btn p-3 collapsed" href="javascript:;" role="button" data-toggle="collapse" data-target="#coursesCollapseThree" aria-expanded="false" aria-controls="coursesCollapseThree">
+            <div class="card-header card-collapse" id="coursesHeadingThree_${count}">
+                <a class="btn btn-link btn-sm btn-block card-btn p-3 collapsed" href="javascript:;" role="button" data-toggle="collapse" data-target="#coursesCollapseThree_${count}" aria-expanded="false" aria-controls="coursesCollapseThree_${count}">
                     <span class="row">
                         <span class="col-8">
                             <span class="media">
@@ -61,7 +84,7 @@ export default (COURSE)=>{
                                     <span class="card-btn-toggle-active">−</span> 
                                 </span> 
                                 <span class="media-body">
-                                    <span class="text-body font-weight-bold mr-5">${lessons[section].title}</span> 
+                                    <span class="text-body font-weight-bold mr-5 text-capitalize">${lessons[section].title}</span> 
                                 </span>
                             </span>
                         </span> 
@@ -78,24 +101,9 @@ export default (COURSE)=>{
                     </span>
                 </a>
             </div>
-            <div id="coursesCollapseThree" class="collapse" aria-labelledby="coursesHeadingThree">
+            <div id="coursesCollapseThree_${count}" class="collapse" aria-labelledby="coursesHeadingThree_${count}">
                 <div class="card-body p-0">
-                    <div class="border-bottom py-3 pr-3 pl-6">
-                        <div class="row">
-                            <div class="col-8"> 
-                                <span class="media text-body font-size-1 mr-5">
-                                    <i class="fa fa-play-circle min-w-3rem text-center opacity-lg mt-1 mr-2 ml-1"></i>
-                                    <span class="media-body"><span>Introduction to Python Data Types</span> </span>
-                                </span>
-                            </div>
-                            <div class="col-4 text-right">
-                                <div class="row">
-                                    <div class="col-lg-6"> </div>
-                                    <div class="col-lg-6"> <span class="font-size-1">04:02</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    ${lessonsContent(lessons[section].lessons)}
                 </div>
             </div>
             </div>`
@@ -220,60 +228,10 @@ export default (COURSE)=>{
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card border mb-1">
-                                        <div class="card-header card-collapse" id="coursesHeadingOne"><a class="btn btn-link btn-sm btn-block card-btn p-3" href="javascript:;" role="button" data-toggle="collapse" data-target="#coursesCollapseOne" aria-expanded="true" aria-controls="coursesCollapseOne"><span class="row"><span class="col-8"><span class="media"><span class="card-btn-toggle mr-3 ml-0"><span class="card-btn-toggle-default">+</span> <span class="card-btn-toggle-active">−</span> </span> <span class="media-body"><span class="text-body font-weight-bold mr-5">Course overview</span> </span></span></span> <span class="col-4 text-right"><span class="row"><span class="col-lg-6"><span class="text-muted">5 lectures</span> </span> <span class="col-lg-6"><span class="text-muted">15:32</span> </span></span></span></span></a></div>
-                                        <div id="coursesCollapseOne" class="collapse show" aria-labelledby="coursesHeadingOne">
-                                            <div class="card-body p-0">
-                                                <div class="border-bottom py-3 pr-3 pl-6">
-                                                    <div class="row">
-                                                        <div class="col-8">
-                                                            <a class="media font-size-1 mr-5" href="#"> <i class="fa fa-play-circle min-w-3rem text-center opacity-lg mt-1 mr-2 ml-1"></i> <span class="media-body"><span>Course introduction</span> </span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-4 text-right">
-                                                            <div class="row">
-                                                                <div class="col-lg-6"> <a class="font-size-1" href="#">Preview</a> </div>
-                                                                <div class="col-lg-6"> <span class="text-primary font-size-1">06:39</span> </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     ${courseContent(COURSE.lessons.videos)}
                                     <div class="border-top pt-7 mt-7">
                                         <h3 class="mb-4">Description</h3>
                                         ${COURSE.description}
-                                    </div>
-                                </div>
-                                <div class="border-top pt-7 mt-7">
-                                    <h3 class="mb-4">About the instructor</h3>
-                                    <div class="row">
-                                        <div class="col-lg-4 mb-4 mb-lg-0">
-                                            <div class="avatar avatar-xl avatar-circle mb-3"><img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img1.jpg" alt="Image Description"></div>
-                                            <div class="media text-body font-size-1 mb-2">
-                                                <div class="min-w-3rem text-center mr-2"><i class="fa fa-star"></i></div>
-                                                <div class="media-body">4.87 Instructor rating</div>
-                                            </div>
-                                            <div class="media text-body font-size-1 mb-2">
-                                                <div class="min-w-3rem text-center mr-2"><i class="fa fa-comments"></i></div>
-                                                <div class="media-body">1,533 reviews</div>
-                                            </div>
-                                            <div class="media text-body font-size-1 mb-2">
-                                                <div class="min-w-3rem text-center mr-2"><i class="fa fa-user"></i></div>
-                                                <div class="media-body">23,912 students</div>
-                                            </div>
-                                            <div class="media text-body font-size-1 mb-2">
-                                                <div class="min-w-3rem text-center mr-2"><i class="fa fa-play"></i></div>
-                                                <div class="media-body">29 courses</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="mb-2">
-                                                <h4 class="h5 mb-1"><a href="author.html">Nataly Gaga</a></h4><span class="d-block font-size-1 font-weight-bold">Head of Data Science, Pierian Data Inc.</span></div>
-                                            <p>Nataly Gaga has a BS and MS in Mechanical Engineering from Santa Clara University and years of experience as a professional instructor and trainer for Data Science and programming. She has publications and patents in various fields such as microfluidics, materials science, and data science technologies.</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

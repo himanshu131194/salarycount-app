@@ -116,6 +116,7 @@ export default {
 
         const isAlredyThr = await Courses.findOne({ title: data.title, courseCreated: data.course_created, totalHours: data.total_time })
 
+        console.log(isAlredyThr);
         if(isAlredyThr){
             return res.send(isAlredyThr)
         }
@@ -132,65 +133,67 @@ export default {
         //   author_original: 'https://cms-assets.tutsplus.com/cdn-cgi/image/width=76,height=76/uploads/users/227/profiles/1328/profileImage/rachel-mccollin-jan2015-tutsplus.jpg',
         //   author_url: 'https://tutsplus.com/authors/rachel-mccollin'
         // }
-        let getAuthor = async (author, author_url, author_thumb, author_original)=>{
-            // let authorThumb = (await uploadToS3(author_thumb, null, 'courses/authors/thumb'));
-            // let authorOriginal = (await uploadToS3(author_original, null, 'courses/authors/original'));
-            let result = await Authors.findOneAndUpdate({ 
-                name: author.trim(),
-                url: author_url
-            }, { 
-                poster:{
-                    thumb : {
-                        url: author_thumb,
-                        bucket: '',
-                        file: '',
-                        path: ''
-                    },
-                    original: {
-                        url: author_original,
-                        bucket: '',
-                        file: '',
-                        path: ''
-                    }
-                },
-                $inc: { coursesCount: 1 } 
-            }, { new: true, upsert: true });
-            return [result._id];
-        }
 
-        let courseUrl = "/"+data.course_url.split("/").pop();
-        // let posterThumb = await uploadToS3(data.poster_thumb, null, 'courses/posters/thumb');
-        let course_data = {
-            page,
-            isCost: data.free,
-            title: data.title.trim(),
-            courseUrl,
-            summary: data.post_teaser.trim(),
-            poster:{
-                thumb:{ 
-                    url: data.poster_thumb,
-                    bucket: '',
-                    file: '',
-                    path:''
-                 },
-                original:{ 
-                    url: '',
-                    bucket: '',
-                    file: '',
-                    path: ''
-                 }
-            },
-            level:0,
-            courseCreated: data.course_created,
-            totalHours: data.total_time,
-            authors: await getAuthor(data.author, data.author_url, data.author_thumb, data.author_original)
-        }
 
-        let course = new Courses(course_data);
-        let result = await course.save();
+        // let getAuthor = async (author, author_url, author_thumb, author_original)=>{
+        //     // let authorThumb = (await uploadToS3(author_thumb, null, 'courses/authors/thumb'));
+        //     // let authorOriginal = (await uploadToS3(author_original, null, 'courses/authors/original'));
+        //     let result = await Authors.findOneAndUpdate({ 
+        //         name: author.trim(),
+        //         url: author_url
+        //     }, { 
+        //         poster:{
+        //             thumb : {
+        //                 url: author_thumb,
+        //                 bucket: '',
+        //                 file: '',
+        //                 path: ''
+        //             },
+        //             original: {
+        //                 url: author_original,
+        //                 bucket: '',
+        //                 file: '',
+        //                 path: ''
+        //             }
+        //         },
+        //         $inc: { coursesCount: 1 } 
+        //     }, { new: true, upsert: true });
+        //     return [result._id];
+        // }
 
-        console.log(result);
-        res.send(result)
+        // let courseUrl = "/"+data.course_url.split("/").pop();
+        // // let posterThumb = await uploadToS3(data.poster_thumb, null, 'courses/posters/thumb');
+        // let course_data = {
+        //     page,
+        //     isCost: data.free,
+        //     title: data.title.trim(),
+        //     courseUrl,
+        //     summary: data.post_teaser.trim(),
+        //     poster:{
+        //         thumb:{ 
+        //             url: data.poster_thumb,
+        //             bucket: '',
+        //             file: '',
+        //             path:''
+        //          },
+        //         original:{ 
+        //             url: '',
+        //             bucket: '',
+        //             file: '',
+        //             path: ''
+        //          }
+        //     },
+        //     level:0,
+        //     courseCreated: data.course_created,
+        //     totalHours: data.total_time,
+        //     authors: await getAuthor(data.author, data.author_url, data.author_thumb, data.author_original)
+        // }
+
+        // let course = new Courses(course_data);
+        // let result = await course.save();
+
+        // console.log(result);
+        // res.send(result)
     },
 
     updateCourses : async (req, res)=>{
