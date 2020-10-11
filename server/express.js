@@ -1,10 +1,9 @@
 import express from 'express'
 import path from 'path'
 import bodyParser from 'body-parser'
-import Template from './../template.js'
+import errorTemplate from './views/error-404.js'
 import postsRoutes from './routes/posts.routes'
 import coursesRoutes from './routes/courses.routes'
-
 import cors from 'cors'
 // import './services/cache'
 
@@ -20,18 +19,18 @@ const CURRENT_WORKING_DIR = process.cwd();
 app.use(express.static(path.join(CURRENT_WORKING_DIR, 'public')));
 
 //comment out before building for production
-import devBundle from './devBundle'
-//comment out before building for production
-devBundle.compile(app);
+// import devBundle from './devBundle'
+// //comment out before building for production
+// devBundle.compile(app);
 
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
-app.use('/api', postsRoutes(express.Router()));
-app.use('/api', coursesRoutes(express.Router()));
-
+// app.use('/api', postsRoutes(express.Router()));
+// app.use('/api', coursesRoutes(express.Router()));
+app.use('/', coursesRoutes(express.Router()));
 
 app.get('*', (req, res)=>{
-  res.send(Template());
+  res.send(errorTemplate());
 })
 
 export default app;

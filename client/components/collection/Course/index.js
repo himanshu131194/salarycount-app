@@ -2,6 +2,11 @@ import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import * as actions from '../../actions'
 import _ from "lodash";
+import Sidebar from './Sidebar'
+import Description from './Description'
+import RelatedCourses from './RelatedCourses'
+import Authors from './Authors'
+
 
 class Main extends Component{
     filters = {
@@ -24,7 +29,7 @@ class Main extends Component{
         return(
             <main id="content" role="main">
                 <div className="position-relative">
-                    <div className="gradient-y-overlay-lg-white bg-img-hero space-2" style={{backgroundImage: '/img/1920x800/img10.jpg'}}>
+                    <div className="gradient-y-overlay-lg-white bg-img-hero space-2" style={{backgroundImage: "url('/img/img10.jpg')"}}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-7 col-lg-8"> <small className="btn btn-xs btn-success btn-pill text-uppercase mb-2">Bestseller</small>
@@ -54,7 +59,10 @@ class Main extends Component{
                             </div>
                         </div>
                     </div>
+                    <Sidebar/>
                 </div>
+                <Description/>
+                <RelatedCourses/>
             </main>
         )
     }

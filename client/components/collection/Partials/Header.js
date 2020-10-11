@@ -12,7 +12,7 @@ class Header extends Component{
 					  <div className="container mt-lg-n2">
 						  <nav className="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
 							  <div className="navbar-nav-wrap">
-									<a className="navbar-brand navbar-nav-wrap-brand" href="index.html" aria-label="Front">
+									<a className="navbar-brand navbar-nav-wrap-brand" href="/" aria-label="Front">
 										<img src="https://gostreamlabs.com/front/assets/svg/logos/logo.svg" alt="Logo"/>
 									</a>
 

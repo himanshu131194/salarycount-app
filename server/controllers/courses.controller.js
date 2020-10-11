@@ -6,7 +6,10 @@ import Authors from '../models/courses/authors'
 import Caterogies from '../models/courses/categories'
 import subCaterogies from '../models/courses/sub_categories'
 import Videos from '../models/courses/videos'
+import CoursesLive from '../models/courses/courses_live'
 
+import errorTemplate from '../views/error-404.js'
+import courseTemplate from '../views/course.js'
 
 export default {
     listOfAllCourses: async (req, res)=>{
@@ -22,7 +25,7 @@ export default {
 
         try {
            const listCourses = await Courses.aggregate([
-               { $match : {isCost: true} },
+               { $match : {} },
                {
                     $lookup: {
                         from: 'authors',
@@ -85,8 +88,42 @@ export default {
             console.log(error)
             res.send({
                 error
-            })
+            });
         }
+    },
+
+    Course: async (req, res)=>{
+        //GET COURSE URL 
+        const { course_id } = req.params;
+        console.log(course_id);
+        const [course] = await CoursesLive.aggregate([
+            { $match : { courseUrl: `/${course_id}` } },
+            {
+                 $lookup: {
+                     from: 'videos',
+                     localField: 'lessons',
+                     foreignField: '_id',
+                     as: 'lessons'
+                 }
+             },
+             { $unwind: "$lessons" },
+             {
+                 $project:{
+                     title: 1,
+                     summary: 1,
+                     rating: 1,
+                     keyPoints: 1,
+                     lessons: 1,
+                     description: 1,
+                     poster: 1,
+                     s3Url: 1,
+                     totalHours: 1,
+                     totalLessons: 1
+                 }
+             }
+        ]);
+        console.log(course.lessons.videos.chapter_1.lessons);
+        res.send(courseTemplate(course));
     }
 }
 
