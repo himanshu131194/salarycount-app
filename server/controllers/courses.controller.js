@@ -10,6 +10,8 @@ import CoursesLive from '../models/courses/courses_live'
 
 import errorTemplate from '../views/error-404.js'
 import courseTemplate from '../views/course.js'
+import footerTemplate from '../views/footer.js'
+
 
 export default {
     listOfAllCourses: async (req, res)=>{
@@ -123,7 +125,7 @@ export default {
              }
         ]);
         console.log(course.lessons.videos.chapter_2.lessons);
-        res.send(courseTemplate(course));
+        res.send(courseTemplate(course, footerTemplate));
     }
 }
 
