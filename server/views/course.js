@@ -55,7 +55,7 @@ export default (COURSE)=>{
                             <div class="col-8"> 
                                 <span class="media text-body font-size-1 mr-5">
                                     <i class="fa fa-play-circle min-w-3rem text-center opacity-lg mt-1 mr-2 ml-1"></i>
-                                    <span class="media-body"><span class="text-capitalize">${chapter.title}</span> </span>
+                                    <span class="media-body"><span>${chapter.title}</span> </span>
                                 </span>
                             </div>
                             <div class="col-4 text-right">
@@ -84,7 +84,7 @@ export default (COURSE)=>{
                                     <span class="card-btn-toggle-active">−</span> 
                                 </span> 
                                 <span class="media-body">
-                                    <span class="text-body font-weight-bold mr-5 text-capitalize">${lessons[section].title}</span> 
+                                    <span class="text-body font-weight-bold mr-5">${lessons[section].title}</span> 
                                 </span>
                             </span>
                         </span> 

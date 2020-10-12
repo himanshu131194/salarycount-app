@@ -4492,8 +4492,8 @@ input[type="button"].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
+  /* padding-top: 0.3rem; */
+  /* padding-bottom: 0.3rem; */
   margin-right: 0;
   font-size: 1.25rem;
   line-height: inherit;
@@ -13244,7 +13244,8 @@ button:focus {
 /* Navbar Brand */
 .navbar-brand,
 .navbar-brand > img {
-  width: 8.5rem;
+  /* width: 8.5rem; */
+  width: 3.5rem;
 }
 
 /* Navbar Toggler */
