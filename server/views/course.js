@@ -147,7 +147,7 @@ export default (COURSE, FOOTER)=>{
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="What do you want to learn?" aria-label="What do you want to learn?" id="global_course_search">
                                                 
-                                                    <div class="position-absolute nav card pb-2 pl-4 pr-4 mt-7 pre-scrollable list-suggested-profiles">
+                                                    <div class="position-absolute nav card d-block pb-2 pl-4 pr-4 mt-7 pre-scrollable list-suggested-profiles">
                                                         <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
                                                         <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
                                                         <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
