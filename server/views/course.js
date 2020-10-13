@@ -147,22 +147,8 @@ export default (COURSE, FOOTER)=>{
                                                     </div>
                                                     <input type="text" class="form-control" placeholder="What do you want to learn?" aria-label="What do you want to learn?" id="global_course_search">
                                                 
-                                                    <div class="position-absolute nav card d-block pb-2 pl-4 pr-4 mt-7 pre-scrollable list-suggested-profiles">
-                                                        <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Learn how to create eight different 3D text effects&nbsp;</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Get inspired by the&nbsp;fonts&nbsp;and&nbsp;3D text effects&nbsp;</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Learn how to create eight different 3D text effects&nbsp;</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Get inspired by the&nbsp;fonts&nbsp;and&nbsp;3D text effects&nbsp;</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Learn how to create eight different 3D text effects&nbsp;</a>
-                                                        <a href="#" class="nav-link pb-0 pt-2">Get inspired by the&nbsp;fonts&nbsp;and&nbsp;3D text effects&nbsp;</a>
+                                                    <div class="position-absolute nav card d-block pb-2 pl-4 pr-4 mt-7 pre-scrollable list-suggested-profiles" id="suggested_courses">
+
                                                     </div>
 
                                                 </form>
@@ -338,21 +324,7 @@ export default (COURSE, FOOTER)=>{
                 });
             });
             </script>
-            <script>
-                    document.getElementById("global_course_search").onkeyup = (e)=>{
-                        console.log(e);
-                        fetch('/search-title?title=a')
-                            .then((res)=>{
-                                return res.json()
-                            })
-                            .then((result)=>{
-                                console.log(result)
-                            })
-                        let getTitles = await fetch('/search-title?title=a'),
-                            getTitles = await getTitle.json();
-                        console.log(getTitles);
-                    }
-            </script>
+            <script src="/js/course.js"></script>
             <div id="uvpn_rate_us" style="display: none;">
                 <div class="uvpn_wrap">
                     <div class="uvpn_logo-ext">
