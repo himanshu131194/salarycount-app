@@ -340,7 +340,17 @@ export default (COURSE, FOOTER)=>{
             </script>
             <script>
                     document.getElementById("global_course_search").onkeyup = (e)=>{
-                        console.log(e.target.value);
+                        console.log(e);
+                        fetch('/search-title?title=a')
+                            .then((res)=>{
+                                return res.json()
+                            })
+                            .then((result)=>{
+                                console.log(result)
+                            })
+                        let getTitles = await fetch('/search-title?title=a'),
+                            getTitles = await getTitle.json();
+                        console.log(getTitles);
                     }
             </script>
             <div id="uvpn_rate_us" style="display: none;">

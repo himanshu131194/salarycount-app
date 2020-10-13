@@ -126,6 +126,38 @@ export default {
         ]);
         console.log(course.lessons.videos.chapter_2.lessons);
         res.send(courseTemplate(course, footerTemplate()));
+    },
+
+    seachCoursesTitle: async (req, res)=>{
+        const { title='' } = req.query;   
+        if(title == ''){
+            return res.send({
+                data : []
+            })
+        }
+        let filterObj = {};
+        filterObj = { title : {$regex: "^" + title.toLowerCase() + ".*", $options: 'i'} };
+
+        console.log(filterObj);
+
+        try {
+            const titles = await Courses.aggregate([
+                { $match : filterObj },
+                {
+                    $project:{
+                        title: 1
+                        // course: 1
+                    }
+                }
+            ]);
+            return res.send({
+                data : titles
+            });
+        } catch (error) {
+            res.send({
+                error
+            })
+        }
     }
 }
 

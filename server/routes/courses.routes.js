@@ -6,7 +6,9 @@ export default (router)=>{
 
     router.get('/filters-list', coursesController.listOfCategoriesAndSubcategories);
 
-    router.get('/courses/:course_id', coursesController.Course)
+    router.get('/courses/:course_id', coursesController.Course);
+
+    router.get('/search-title', coursesController.seachCoursesTitle)
 
     return router;
 }
