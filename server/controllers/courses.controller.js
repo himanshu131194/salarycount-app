@@ -125,7 +125,7 @@ export default {
              }
         ]);
         console.log(course.lessons.videos.chapter_2.lessons);
-        res.send(courseTemplate(course, footerTemplate));
+        res.send(courseTemplate(course, footerTemplate()));
     }
 }
 

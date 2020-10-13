@@ -69,7 +69,6 @@ export default (COURSE, FOOTER)=>{
             }
             return displayString;
         }
-        console.log(lessons);
         let displayString = '', count=1;
         for(let section in lessons){
             displayString += `
@@ -141,12 +140,31 @@ export default (COURSE, FOOTER)=>{
                                     <a class="navbar-brand navbar-nav-wrap-brand" href="/" aria-label="Front"><img src="https://salarycount.s3.ap-south-1.amazonaws.com/assets/logo/logo.png" alt="Logo"></a>
                                     <div class="navbar-nav-wrap-navbar navbar-collapse collapse">
                                         <ul class="navbar-nav">
-                                            <li class="d-none d-lg-inline-block navbar-nav-item flex-grow-1 mx-2">
+                                            <li class="d-none d-lg-inline-block flex-grow-1 mx-2">
                                                 <form class="input-group input-group-sm input-group-merge w-75">
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text"><i class="fa fa-search"></i></div>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="What do you want to learn?" aria-label="What do you want to learn?">
+                                                    <input type="text" class="form-control" placeholder="What do you want to learn?" aria-label="What do you want to learn?" id="global_course_search">
+                                                
+                                                    <div class="position-absolute nav card pb-2 pl-4 pr-4 mt-7 pre-scrollable list-suggested-profiles">
+                                                        <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Learn how to create eight different 3D text effects&nbsp;</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Get inspired by the&nbsp;fonts&nbsp;and&nbsp;3D text effects&nbsp;</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Learn how to create eight different 3D text effects&nbsp;</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Get inspired by the&nbsp;fonts&nbsp;and&nbsp;3D text effects&nbsp;</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Learn HTLML and CSS in 30 days</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">A Beginner's Guide to Using WooCommerce</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Introduction to Photo Manipulation in Adobe Photoshop</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Learn how to create eight different 3D text effects&nbsp;</a>
+                                                        <a href="#" class="nav-link pb-0 pt-2">Get inspired by the&nbsp;fonts&nbsp;and&nbsp;3D text effects&nbsp;</a>
+                                                    </div>
+
                                                 </form>
                                             </li>
                                         </ul>
@@ -320,6 +338,11 @@ export default (COURSE, FOOTER)=>{
                 });
             });
             </script>
+            <script>
+                    document.getElementById("global_course_search").onkeyup = (e)=>{
+                        console.log(e.target.value);
+                    }
+            </script>
             <div id="uvpn_rate_us" style="display: none;">
                 <div class="uvpn_wrap">
                     <div class="uvpn_logo-ext">
@@ -351,3 +374,5 @@ export default (COURSE, FOOTER)=>{
         </html>`
     )
 }
+
+
