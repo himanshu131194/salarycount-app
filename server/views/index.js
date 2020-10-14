@@ -1,4 +1,4 @@
-export default ()=>{
+export default (list, HEADER, FOOTER)=>{
     return(
         `<!DOCTYPE html>
         <html lang="en" data-select2-id="31">
@@ -13,11 +13,11 @@ export default ()=>{
             <!-- Font -->
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet">
             <!-- CSS Implementing Plugins -->
-            <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/all.min.css">
-            <link rel="stylesheet" href="../../assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
-            <link rel="stylesheet" href="../../assets/vendor/select2/dist/css/select2.min.css">
+            <link rel="stylesheet" href="/css/font-awesome/css/all.css">
+            <link rel="stylesheet" href="/css/hs-mega-menu/dist/hs-mega-menu.min.css">
+            <link rel="stylesheet" href="/css/select2/dist/css/select2.min.css">
             <!-- CSS Front Template -->
-            <link rel="stylesheet" href="../../assets/css/theme.css"> </head>
+            <link rel="stylesheet" href="/css/theme.css"> </head>
 
         <body data-select2-id="30">
             <!-- ========== HEADER ========== -->
