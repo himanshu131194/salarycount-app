@@ -16,6 +16,42 @@ import headerTemplate from '../views/header.js'
 
 
 export default {
+    index: async (req, res)=>{
+        const FOOTER = footerTemplate(),
+              HEADER = headerTemplate();
+        //GET COURSE URL 
+        const { course_id } = req.params;
+        console.log(course_id);
+        const [course] = await CoursesLive.aggregate([
+            { $match : { courseUrl: `/${course_id}` } },
+            {
+                 $lookup: {
+                     from: 'videos',
+                     localField: 'lessons',
+                     foreignField: '_id',
+                     as: 'lessons'
+                 }
+             },
+             { $unwind: "$lessons" },
+             {
+                 $project:{
+                     title: 1,
+                     summary: 1,
+                     rating: 1,
+                     keyPoints: 1,
+                     lessons: 1,
+                     description: 1,
+                     poster: 1,
+                     s3Url: 1,
+                     totalHours: 1,
+                     totalLessons: 1
+                 }
+             }
+        ]);
+        console.log(course.lessons.videos.chapter_2.lessons);
+        res.send(courseTemplate(course, HEADER, FOOTER));
+    },
+
     listOfAllCourses: async (req, res)=>{
         const { offset:skip=0, limit=6, filters={} } = req.query;
         let filterObj = {}, sort = { total_videos_count: -1 };

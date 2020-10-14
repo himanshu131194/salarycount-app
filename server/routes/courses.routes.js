@@ -10,5 +10,8 @@ export default (router)=>{
 
     router.get('/search-title', coursesController.seachCoursesTitle)
 
+    router.get('/', coursesController.index)
+
+
     return router;
 }

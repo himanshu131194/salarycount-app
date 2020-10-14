@@ -1,4 +1,4 @@
-export default (COURSE, FOOTER)=>{
+export default (COURSE, HEADER, FOOTER)=>{
 
     let displayRating = (count)=>{
         let displayString = '';
@@ -132,6 +132,7 @@ export default (COURSE, FOOTER)=>{
         
         <body class="layout-column">
             <div id="root">
+                ${HEADER}
                 <main id="content" role="main">
                     <div class="position-relative">
                         <div class="gradient-y-overlay-lg-white bg-img-hero space-top-2 space-bottom-1" style="background-image: url(&quot;/img/img10.jpg&quot;);">
