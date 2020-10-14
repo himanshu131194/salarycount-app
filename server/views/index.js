@@ -9,13 +9,13 @@ export default (list, HEADER, FOOTER)=>{
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <!-- Favicon -->
-            <link rel="shortcut icon" href="../../favicon.ico">
+            <link rel="shortcut icon" href="https://gostreamlabs.com/front/favicon.ico">
             <!-- Font -->
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet">
             <!-- CSS Implementing Plugins -->
-            <link rel="stylesheet" href="/css/font-awesome/css/all.css">
-            <link rel="stylesheet" href="/css/hs-mega-menu/dist/hs-mega-menu.min.css">
-            <link rel="stylesheet" href="/css/select2/dist/css/select2.min.css">
+            <link rel="stylesheet" href="/css/all.css">
+            <link rel="stylesheet" href="/css/hs-mega-menu.min.css">
+            <link rel="stylesheet" href="/css/select2.min.css">
             <!-- CSS Front Template -->
             <link rel="stylesheet" href="/css/theme.css"> </head>
 
@@ -170,16 +170,16 @@ export default (list, HEADER, FOOTER)=>{
                             <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
                                 <div class="row mx-md-n2">
                                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="../../assets/svg/components/graphics-1.svg" alt="Image Description">
+                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-1.svg" alt="Image Description">
                                             <div class="position-absolute top-0 left-0 mt-3 ml-3"> <small class="btn btn-xs btn-success btn-pill text-uppercase shadow-soft py-1 px-2 mb-3">Bestseller</small> </div>
                                             <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
                                                 <div class="d-flex align-items-center flex-wrap">
                                                     <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
                                                     </ul> <span class="d-inline-block">
                                 <small class="font-weight-bold text-white mr-1">4.91</small>
                                 <small class="text-white-70">(1.5k+ reviews)</small>
@@ -198,7 +198,7 @@ export default (list, HEADER, FOOTER)=>{
                                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nataly Gaga">
-                                <img class="avatar-img" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img1.jpg" alt="Image Description">
                             </span> </div>
                                             </div>
                                             <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 10 lessons </div> <span class="text-muted mx-2">|</span>
@@ -214,15 +214,15 @@ export default (list, HEADER, FOOTER)=>{
                             <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
                                 <div class="row mx-md-n2">
                                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="../../assets/svg/components/graphics-2.svg" alt="Image Description">
+                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-2.svg" alt="Image Description">
                                             <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
                                                 <div class="d-flex align-items-center flex-wrap">
                                                     <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
                                                     </ul> <span class="d-inline-block">
                                 <small class="font-weight-bold text-white mr-1">4.95</small>
                                 <small class="text-white-70">(1k+ reviews)</small>
@@ -241,9 +241,9 @@ export default (list, HEADER, FOOTER)=>{
                                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Emily Milda">
-                                <img class="avatar-img" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img2.jpg" alt="Image Description">
                             </span> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="John O'nolan">
-                                <img class="avatar-img" src="../../assets/img/100x100/img4.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img4.jpg" alt="Image Description">
                             </span> </div>
                                             </div>
                                             <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 8 lessons </div> <span class="text-muted mx-2">|</span>
@@ -259,15 +259,15 @@ export default (list, HEADER, FOOTER)=>{
                             <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
                                 <div class="row mx-md-n2">
                                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="../../assets/svg/components/graphics-4.svg" alt="Image Description">
+                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-4.svg" alt="Image Description">
                                             <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
                                                 <div class="d-flex align-items-center flex-wrap">
                                                     <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star-muted.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star-muted.svg" alt="Review rating" width="14"></li>
                                                     </ul> <span class="d-inline-block">
                                 <small class="font-weight-bold text-white mr-1">4.73</small>
                                 <small class="text-white-70">(4.7k+ reviews)</small>
@@ -286,9 +286,9 @@ export default (list, HEADER, FOOTER)=>{
                                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Emily Milda">
-                                <img class="avatar-img" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img2.jpg" alt="Image Description">
                             </span> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="John O'nolan">
-                                <img class="avatar-img" src="../../assets/img/100x100/img4.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img4.jpg" alt="Image Description">
                             </span> </div>
                                             </div>
                                             <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 25 lessons </div> <span class="text-muted mx-2">|</span>
@@ -304,16 +304,16 @@ export default (list, HEADER, FOOTER)=>{
                             <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
                                 <div class="row mx-md-n2">
                                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="../../assets/svg/components/graphics-5.svg" alt="Image Description">
+                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-5.svg" alt="Image Description">
                                             <div class="position-absolute top-0 left-0 mt-3 ml-3"> <small class="btn btn-xs btn-success btn-pill text-uppercase shadow-soft py-1 px-2 mb-3">Bestseller</small> </div>
                                             <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
                                                 <div class="d-flex align-items-center flex-wrap">
                                                     <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star-half.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star-half.svg" alt="Review rating" width="14"></li>
                                                     </ul> <span class="d-inline-block">
                                 <small class="font-weight-bold text-white mr-1">4.87</small>
                                 <small class="text-white-70">(3.8k+ reviews)</small>
@@ -332,7 +332,7 @@ export default (list, HEADER, FOOTER)=>{
                                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanna Wolfe">
-                                <img class="avatar-img" src="../../assets/img/100x100/img11.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img11.jpg" alt="Image Description">
                             </span> </div>
                                             </div>
                                             <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 42 lessons </div> <span class="text-muted mx-2">|</span>
@@ -348,15 +348,15 @@ export default (list, HEADER, FOOTER)=>{
                             <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
                                 <div class="row mx-md-n2">
                                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="../../assets/svg/components/graphics-6.svg" alt="Image Description">
+                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-6.svg" alt="Image Description">
                                             <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
                                                 <div class="d-flex align-items-center flex-wrap">
                                                     <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star-half.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star-half.svg" alt="Review rating" width="14"></li>
                                                     </ul> <span class="d-inline-block">
                                 <small class="font-weight-bold text-white mr-1">4.84</small>
                                 <small class="text-white-70">(723 reviews)</small>
@@ -375,9 +375,9 @@ export default (list, HEADER, FOOTER)=>{
                                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Emily Milda">
-                                <img class="avatar-img" src="../../assets/img/100x100/img2.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img2.jpg" alt="Image Description">
                             </span> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="John O'nolan">
-                                <img class="avatar-img" src="../../assets/img/100x100/img4.jpg" alt="Image Description">
+                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img4.jpg" alt="Image Description">
                             </span> </div>
                                             </div>
                                             <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 5 lessons </div> <span class="text-muted mx-2">|</span>
@@ -393,15 +393,15 @@ export default (list, HEADER, FOOTER)=>{
                             <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
                                 <div class="row mx-md-n2">
                                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="../../assets/svg/components/graphics-3.svg" alt="Image Description">
+                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-3.svg" alt="Image Description">
                                             <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
                                                 <div class="d-flex align-items-center flex-wrap">
                                                     <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="../../assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
                                                     </ul> <span class="d-inline-block">
                                 <small class="font-weight-bold text-white mr-1">4.9</small>
                                 <small class="text-white-70">(961 reviews)</small>
@@ -419,7 +419,7 @@ export default (list, HEADER, FOOTER)=>{
                                         </div>
                                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
                                             <div class="d-flex align-items-center"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanna Wolfe">
-                            <img class="avatar-img" src="../../assets/img/100x100/img11.jpg" alt="Image Description">
+                            <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img11.jpg" alt="Image Description">
                             </span> </div>
                                             <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 35 lessons </div> <span class="text-muted mx-2">|</span>
                                             <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 21h </div> <span class="text-muted mx-2">|</span>
@@ -454,7 +454,7 @@ export default (list, HEADER, FOOTER)=>{
                 <!-- End Courses Section -->
                 <!-- CTA Section -->
                 <div class="container space-bottom-lg-1">
-                    <div class="text-center py-6" style="background: url(../../assets/svg/components/abstract-shapes-19.svg) center no-repeat;">
+                    <div class="text-center py-6" style="background: url(https://gostreamlabs.com/front/assets/svg/components/abstract-shapes-19.svg) center no-repeat;">
                         <h2>Find the right learning path for you</h2>
                         <p>Answer a few questions and match your goals to our programs.</p> <span class="d-block mt-5">
                 <a class="btn btn-primary transition-3d-hover" href="#">Explore by Category</a>
@@ -471,7 +471,7 @@ export default (list, HEADER, FOOTER)=>{
                             <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
                                 <!-- Logo -->
                                 <div class="mb-4">
-                                    <a href="index.html" aria-label="Front"> <img class="brand" src="../../assets/svg/logos/logo.svg" alt="Logo"> </a>
+                                    <a href="index.html" aria-label="Front"> <img class="brand" src="https://gostreamlabs.com/front/assets/svg/logos/logo.svg" alt="Logo"> </a>
                                 </div>
                                 <!-- End Logo -->
                                 <!-- Nav Link -->
@@ -521,7 +521,7 @@ export default (list, HEADER, FOOTER)=>{
                                 <!-- Nav Link -->
                                 <ul class="nav nav-sm nav-x-0 flex-column">
                                     <li class="nav-item"><a class="nav-link" href="mailto:example@gmail.com">Support</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../../documentation/index.html">Docs</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="https://gostreamlabs.com/front/documentation/index.html">Docs</a></li>
                                     <li class="nav-item"><a class="nav-link" href="../pages/status.html">Status</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">API Reference</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#">Tech Requirements</a></li>
@@ -586,7 +586,7 @@ export default (list, HEADER, FOOTER)=>{
                             &quot;target&quot;: &quot;#footerLanguage&quot;,
                             &quot;type&quot;: &quot;css-animation&quot;,
                             &quot;animationIn&quot;: &quot;slideInDown&quot;
-                            }" data-hs-unfold-target="#footerLanguage" data-hs-unfold-invoker=""> <img class="dropdown-item-icon" src="../../assets/vendor/flag-icon-css/flags/4x3/us.svg" alt="United States Flag"> <span>United States</span> </a>
+                            }" data-hs-unfold-target="#footerLanguage" data-hs-unfold-invoker=""> <img class="dropdown-item-icon" src="https://gostreamlabs.com/front/assets/vendor/flag-icon-css/flags/4x3/us.svg" alt="United States Flag"> <span>United States</span> </a>
                                             <div id="footerLanguage" class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2 hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated hs-unfold-reverse-y" data-hs-target-height="372" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInDown" data-hs-unfold-content-animation-out="fadeOut" style="animation-duration: 300ms;"> <a class="dropdown-item active" href="#">English</a> <a class="dropdown-item" href="#">Deutsch</a> <a class="dropdown-item" href="#">Español</a> <a class="dropdown-item" href="#">Français</a> <a class="dropdown-item" href="#">Italiano</a> <a class="dropdown-item" href="#">日本語</a> <a class="dropdown-item" href="#">한국어</a> <a class="dropdown-item" href="#">Nederlands</a> <a class="dropdown-item" href="#">Português</a> <a class="dropdown-item" href="#">Русский</a> </div>
                                         </div>
                                     </li>
@@ -621,18 +621,18 @@ export default (list, HEADER, FOOTER)=>{
             }"> <i class="fas fa-angle-up"></i> </a>
             <!-- End Go to Top -->
             <!-- JS Global Compulsory -->
-            <script src="../../assets/vendor/jquery/dist/jquery.min.js"></script>
-            <script src="../../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-            <script src="../../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/jquery-migrate.min.js"></script>
+            <script src="/js/bootstrap.bundle.min.js"></script>
             <!-- JS Implementing Plugins -->
-            <script src="../../assets/vendor/hs-header/dist/hs-header.min.js"></script>
-            <script src="../../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-            <script src="../../assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
-            <script src="../../assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
-            <script src="../../assets/vendor/select2/dist/js/select2.full.min.js"></script>
+            <script src="/js/hs-header.min.js"></script>
+            <script src="/js/hs-go-to.min.js"></script>
+            <script src="/js/hs-unfold.min.js"></script>
+            <script src="/js/hs-mega-menu.min.js"></script>
+            <script src="/js/select2.full.min.js"></script>
             <!-- JS Front -->
-            <script src="../../assets/js/hs.core.js"></script>
-            <script src="../../assets/js/hs.select2.js"></script>
+            <script src="/js/hs.core.js"></script>
+            <script src="/js/hs.select2.js"></script>
             <!-- JS Plugins Init. -->
             <script>
             $(document).on('ready', function() {
@@ -654,7 +654,7 @@ export default (list, HEADER, FOOTER)=>{
             </script>
             <!-- IE Support -->
             <script>
-            if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../../assets/vendor/polifills.js"><\/script>');
+            if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="https://gostreamlabs.com/front/assets/vendor/polifills.js"><\/script>');
             </script>
             <div id="uvpn_rate_us" style="display: none;">
                 <div class="uvpn_wrap">
