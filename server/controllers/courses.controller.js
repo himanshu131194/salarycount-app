@@ -11,6 +11,8 @@ import CoursesLive from '../models/courses/courses_live'
 import errorTemplate from '../views/error-404.js'
 import courseTemplate from '../views/course.js'
 import footerTemplate from '../views/footer.js'
+import headerTemplate from '../views/header.js'
+
 
 
 export default {
@@ -95,6 +97,8 @@ export default {
     },
 
     Course: async (req, res)=>{
+        const FOOTER = footerTemplate(),
+              HEADER = headerTemplate();
         //GET COURSE URL 
         const { course_id } = req.params;
         console.log(course_id);
@@ -125,7 +129,7 @@ export default {
              }
         ]);
         console.log(course.lessons.videos.chapter_2.lessons);
-        res.send(courseTemplate(course, footerTemplate()));
+        res.send(courseTemplate(course, HEADER, FOOTER));
     },
 
     seachCoursesTitle: async (req, res)=>{
