@@ -32,6 +32,7 @@
     }
 
     window.onload = ()=>{
+        //LODA COURSES
         let pagination = 1;
         if(window.location.search.match('page') && window.location.search.split("=")[1]){
             pagination = parseInt(window.location.search.split("=")[1]);
@@ -77,6 +78,20 @@
         .then(({data})=>{
             console.log(data);
             updateList(data);
+        })   
+        //END LOAD COURSES
+
+        //FILTERS 
+        let loadFilters = (data)=>{
+            console.log(data);
+        }
+        fetch('/filters-list')
+        .then((res)=>{
+            return res.json()
+        })
+        .then(({data})=>{
+            console.log(data);
+            loadFilters(data)
         })   
     }
 
