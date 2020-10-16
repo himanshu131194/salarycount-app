@@ -32,6 +32,11 @@
     }
 
     window.onload = ()=>{
+        let pagination = 1;
+        if(window.location.search.match('page') && window.location.search.split("=")[1]){
+            pagination = parseInt(window.location.search.split("=")[1]);
+        }
+        let pagination = window.location.search.match('page');
         let getVideoDuration  = (time)=>{
             // let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
             let getFormat = (t)=>(t<10) ? ``+t.toString() : t;
@@ -66,7 +71,7 @@
                 ++count;
             }
         }
-        fetch('/list-courses')
+        fetch('/list-courses?limit=6&offset='+(pagination*6))
         .then((res)=>{
             return res.json()
         })

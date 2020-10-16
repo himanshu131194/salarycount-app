@@ -18,6 +18,7 @@ import headerTemplate from '../views/header.js'
 
 export default {
     index: async (req, res)=>{
+        console.log(req.query);
         const FOOTER = footerTemplate(),
               HEADER = headerTemplate();
         res.send(rootTemplate(null, HEADER, FOOTER));

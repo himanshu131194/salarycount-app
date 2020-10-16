@@ -45,6 +45,7 @@ export default (list, HEADER, FOOTER)=>{
                             </div>
                         </div>
                         <p class="font-size-1 text-body mb-0 course-teaser"></p>
+                        
                     </div>
                 </div>
             </a>`

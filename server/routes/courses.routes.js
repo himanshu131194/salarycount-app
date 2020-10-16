@@ -12,6 +12,8 @@ export default (router)=>{
 
     router.get('/', coursesController.index)
 
+    router.get('/courses', coursesController.index)
+
 
     return router;
 }
