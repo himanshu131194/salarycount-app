@@ -1,4 +1,57 @@
 export default (list, HEADER, FOOTER)=>{
+    let listCourses = ()=>{
+        let displayString = '', count=6;
+        while(count>0){
+            displayString += 
+            `<a class="d-block border-bottom pb-5 mb-5 course-blocks" href="course-description.html">
+                <div class="row mx-md-n2">
+                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
+                        <div class="position-relative fix-loading-box cbp-lazyload"> 
+                            <img class="img-fluid w-100 rounded course-thumb" data-cbp-src="https://gostreamlabs.com/front/assets/svg/components/graphics-1.svg" alt="Image Description">
+                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <ul class="list-inline mt-n1 mb-0 mr-2">
+                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
+                                    </ul> 
+                                    <span class="d-inline-block">
+                                        <small class="font-weight-bold text-white mr-1"></small>
+                                        <small class="text-white-70"></small>
+                                    </span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="media mb-2">
+                            <div class="media-body">
+                                <h3 class="text-hover-primary course-title text-uppercase">Complete Python Bootcamp: Go from zero to hero in Python 3</h3> 
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
+                            <div class="total-lessons"> 
+                                <i class="fa fa-book-reader mr-1"></i> 0 lessons 
+                            </div> 
+                            <span class="text-muted mx-2">|</span>
+                            <div class="d-inline-block total-time"> 
+                                <i class="fa fa-clock mr-1"></i>  0h 0m 
+                            </div> 
+                            <span class="text-muted mx-2">|</span>
+                            <div class="d-inline-block"> 
+                                <i class="fa fa-signal mr-1"></i> All levels 
+                            </div>
+                        </div>
+                        <p class="font-size-1 text-body mb-0 course-teaser"></p>
+                    </div>
+                </div>
+            </a>`
+            --count;
+        }
+        return displayString;
+    }
     return(
         `<!DOCTYPE html>
         <html lang="en" data-select2-id="31">
@@ -104,331 +157,51 @@ export default (list, HEADER, FOOTER)=>{
                                     </div>
                                     <div class="col-md-8 text-md-right">
                                         <!-- Select -->
-                                        <select class="js-custom-select select2-hidden-accessible" data-hs-select2-options="{
-                                &quot;minimumResultsForSearch&quot;: &quot;Infinity&quot;,
-                                &quot;customClass&quot;: &quot;btn btn-sm btn-white dropdown-toggle mb-1&quot;,
-                                &quot;dropdownAutoWidth&quot;: true,
-                                &quot;width&quot;: &quot;auto&quot;
-                            }" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                            <option value="sort1" data-select2-id="3">Highest rated</option>
-                                            <option value="sort2" data-select2-id="4">Newest</option>
-                                            <option value="sort3" data-select2-id="5">Lowest price</option>
-                                            <option value="sort4" data-select2-id="6">Highest price</option>
-                                        </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="2" style="width: auto;"><span class="selection"><span class="select2-selection btn btn-sm btn-white dropdown-toggle mb-1" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-zo6d-container"><span class="select2-selection__rendered" id="select2-zo6d-container" role="textbox" aria-readonly="true" title="Newest"><span>Newest</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
-                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        <select class="js-custom-select"
+                                            data-hs-select2-options='{
+                                                "minimumResultsForSearch": "Infinity",
+                                                "customClass": "btn btn-sm btn-white dropdown-toggle mb-1",
+                                                "placeholder": "Skills",
+                                                "dropdownAutoWidth": true,
+                                                "width": "auto"
+                                              }'>
+                                            <option label="empty"></option>
+                                            <option value="1" selected>Beginner</option>
+                                            <option value="2">Intermediate</option>
+                                            <option value="3">Advanced</option>
+                                        </select>
                                         <!-- End Select -->
                                         <!-- Select -->
-                                        <select class="js-custom-select select2-hidden-accessible" data-hs-select2-options="{
-                                &quot;minimumResultsForSearch&quot;: &quot;Infinity&quot;,
-                                &quot;customClass&quot;: &quot;btn btn-sm btn-white dropdown-toggle mb-1&quot;,
-                                &quot;placeholder&quot;: &quot;Type&quot;,
-                                &quot;dropdownAutoWidth&quot;: true,
-                                &quot;width&quot;: &quot;auto&quot;
-                            }" data-select2-id="7" tabindex="-1" aria-hidden="true">
-                                            <option label="empty" data-select2-id="9"></option>
-                                            <option value="price1" selected="" data-select2-id="10">Paid</option>
-                                            <option value="price2" data-select2-id="11">Free</option>
-                                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="8" style="width: auto;"><span class="selection"><span class="select2-selection btn btn-sm btn-white dropdown-toggle mb-1" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-bhor-container"><span class="select2-selection__rendered" id="select2-bhor-container" role="textbox" aria-readonly="true" title="Paid"><span>Paid</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
-                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        <select class="js-custom-select"
+                                            data-hs-select2-options='{
+                                                "minimumResultsForSearch": "Infinity",
+                                                "customClass": "btn btn-sm btn-white dropdown-toggle mb-1",
+                                                "placeholder": "Skills",
+                                                "dropdownAutoWidth": true,
+                                                "width": "auto"
+                                            }'>
+                                            <option label="empty"></option>
+                                            <option value="1" selected>Highest rated</option>
+                                            <option value="2">Newest</option>
+                                            <option value="3">Lowest price</option>
+                                        </select>
                                         <!-- End Select -->
                                         <!-- Select -->
-                                        <select class="js-custom-select select2-hidden-accessible" data-hs-select2-options="{
-                                &quot;minimumResultsForSearch&quot;: &quot;Infinity&quot;,
-                                &quot;customClass&quot;: &quot;btn btn-sm btn-white dropdown-toggle mb-1&quot;,
-                                &quot;placeholder&quot;: &quot;Duration&quot;,
-                                &quot;dropdownAutoWidth&quot;: true,
-                                &quot;width&quot;: &quot;auto&quot;
-                            }" data-select2-id="12" tabindex="-1" aria-hidden="true">
-                                            <option label="empty" data-select2-id="14"></option>
-                                            <option value="duration1" data-select2-id="15">0-3 Hours</option>
-                                            <option value="duration2" data-select2-id="16">3-9 Hours</option>
-                                            <option value="duration3" data-select2-id="17">9-24 Hours</option>
-                                            <option value="duration4" selected="" data-select2-id="18">24+ Hours</option>
-                                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="13" style="width: auto;"><span class="selection"><span class="select2-selection btn btn-sm btn-white dropdown-toggle mb-1" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-bzar-container"><span class="select2-selection__rendered" id="select2-bzar-container" role="textbox" aria-readonly="true" title="24+ Hours"><span>24+ Hours</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
-                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        
                                         <!-- End Select -->
                                         <!-- Select -->
-                                        <select class="js-custom-select select2-hidden-accessible" data-hs-select2-options="{
-                                &quot;minimumResultsForSearch&quot;: &quot;Infinity&quot;,
-                                &quot;customClass&quot;: &quot;btn btn-sm btn-white dropdown-toggle mb-1&quot;,
-                                &quot;placeholder&quot;: &quot;Skills&quot;,
-                                &quot;dropdownAutoWidth&quot;: true,
-                                &quot;width&quot;: &quot;auto&quot;
-                            }" data-select2-id="19" tabindex="-1" aria-hidden="true">
-                                            <option label="empty" data-select2-id="21"></option>
-                                            <option value="beginner" selected="" data-select2-id="22">Beginner</option>
-                                            <option value="intermediate" data-select2-id="23">Intermediate</option>
-                                            <option value="advanced" data-select2-id="24">Advanced</option>
-                                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="20" style="width: auto;"><span class="selection"><span class="select2-selection btn btn-sm btn-white dropdown-toggle mb-1" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-52qh-container"><span class="select2-selection__rendered" id="select2-52qh-container" role="textbox" aria-readonly="true" title="Beginner"><span>Beginner</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span>
-                                        </span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        
                                         <!-- End Select -->
                                     </div>
                                 </div>
                             </div>
                             <!-- End Filter -->
                             <!-- Card -->
-                            <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
-                                <div class="row mx-md-n2">
-                                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-1.svg" alt="Image Description">
-                                            <div class="position-absolute top-0 left-0 mt-3 ml-3"> <small class="btn btn-xs btn-success btn-pill text-uppercase shadow-soft py-1 px-2 mb-3">Bestseller</small> </div>
-                                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                    </ul> <span class="d-inline-block">
-                                <small class="font-weight-bold text-white mr-1">4.91</small>
-                                <small class="text-white-70">(1.5k+ reviews)</small>
-                            </span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="media mb-2">
-                                            <div class="media-body mr-7">
-                                                <h3 class="text-hover-primary">Complete Python Bootcamp: Go from zero to hero in Python 3</h3> </div>
-                                            <div class="d-flex mt-1 ml-auto">
-                                                <div class="text-right"> <small class="d-block text-muted text-lh-sm"><del>$114.99</del></small> <span class="d-block h5 text-primary text-lh-sm mb-0">$99.99</span> </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nataly Gaga">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img1.jpg" alt="Image Description">
-                            </span> </div>
-                                            </div>
-                                            <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 10 lessons </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 3h 25m </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-signal mr-1"></i> All levels </div>
-                                        </div>
-                                        <p class="font-size-1 text-body mb-0">Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!</p>
-                                    </div>
-                                </div>
-                            </a>
+                            ${listCourses()}
                             <!-- End Card -->
                             <!-- Card -->
-                            <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
-                                <div class="row mx-md-n2">
-                                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-2.svg" alt="Image Description">
-                                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                    </ul> <span class="d-inline-block">
-                                <small class="font-weight-bold text-white mr-1">4.95</small>
-                                <small class="text-white-70">(1k+ reviews)</small>
-                            </span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="media mb-2">
-                                            <div class="media-body mr-7">
-                                                <h3 class="text-hover-primary">From the Top: Adobe Illustrator for Beginners</h3> </div>
-                                            <div class="d-flex mt-1 ml-auto">
-                                                <div class="text-right"> <small class="d-block text-muted text-lh-sm"><del>$129.99</del></small> <span class="d-block h5 text-primary text-lh-sm mb-0">$119.99</span> </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Emily Milda">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img2.jpg" alt="Image Description">
-                            </span> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="John O'nolan">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img4.jpg" alt="Image Description">
-                            </span> </div>
-                                            </div>
-                                            <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 8 lessons </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 7h 59m </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-signal mr-1"></i> All levels </div>
-                                        </div>
-                                        <p class="font-size-1 text-body mb-0">The only course you need to learn Adobe Illustrator.</p>
-                                    </div>
-                                </div>
-                            </a>
                             <!-- End Card -->
                             <!-- Card -->
-                            <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
-                                <div class="row mx-md-n2">
-                                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-4.svg" alt="Image Description">
-                                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star-muted.svg" alt="Review rating" width="14"></li>
-                                                    </ul> <span class="d-inline-block">
-                                <small class="font-weight-bold text-white mr-1">4.73</small>
-                                <small class="text-white-70">(4.7k+ reviews)</small>
-                            </span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="media mb-2">
-                                            <div class="media-body mr-7">
-                                                <h3 class="text-hover-primary">Get started with Vue.js</h3> </div>
-                                            <div class="d-flex mt-1 ml-auto">
-                                                <div class="text-right"> <small class="d-block text-muted text-lh-sm"><del>$169.99</del></small> <span class="d-block h5 text-primary text-lh-sm mb-0">$129.99</span> </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Emily Milda">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img2.jpg" alt="Image Description">
-                            </span> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="John O'nolan">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img4.jpg" alt="Image Description">
-                            </span> </div>
-                                            </div>
-                                            <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 25 lessons </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 17h 46m </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-signal mr-1"></i> Intermediate </div>
-                                        </div>
-                                        <p class="font-size-1 text-body mb-0">Master Vue.js and build awesome, web apps with the successor of Vue.js</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- End Card -->
-                            <!-- Card -->
-                            <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
-                                <div class="row mx-md-n2">
-                                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-5.svg" alt="Image Description">
-                                            <div class="position-absolute top-0 left-0 mt-3 ml-3"> <small class="btn btn-xs btn-success btn-pill text-uppercase shadow-soft py-1 px-2 mb-3">Bestseller</small> </div>
-                                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star-half.svg" alt="Review rating" width="14"></li>
-                                                    </ul> <span class="d-inline-block">
-                                <small class="font-weight-bold text-white mr-1">4.87</small>
-                                <small class="text-white-70">(3.8k+ reviews)</small>
-                            </span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="media mb-2">
-                                            <div class="media-body mr-7">
-                                                <h3 class="text-hover-primary">The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert</h3> </div>
-                                            <div class="d-flex mt-1 ml-auto">
-                                                <div class="text-right"> <small class="d-block text-muted text-lh-sm"><del>$159.99</del></small> <span class="d-block h5 text-primary text-lh-sm mb-0">$111.99</span> </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanna Wolfe">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img11.jpg" alt="Image Description">
-                            </span> </div>
-                                            </div>
-                                            <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 42 lessons </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 31h 5m </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-signal mr-1"></i> Beginner </div>
-                                        </div>
-                                        <p class="font-size-1 text-body mb-0">Learn Python like a Professional! Start from the basics and go all the way to creating your own applications and games!</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- End Card -->
-                            <!-- Card -->
-                            <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
-                                <div class="row mx-md-n2">
-                                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-6.svg" alt="Image Description">
-                                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star-half.svg" alt="Review rating" width="14"></li>
-                                                    </ul> <span class="d-inline-block">
-                                <small class="font-weight-bold text-white mr-1">4.84</small>
-                                <small class="text-white-70">(723 reviews)</small>
-                            </span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="media mb-2">
-                                            <div class="media-body mr-7">
-                                                <h3 class="text-hover-primary">Coding block for WordPress</h3> </div>
-                                            <div class="d-flex mt-1 ml-auto">
-                                                <div class="text-right"> <small class="d-block text-muted text-lh-sm"><del>$64.99</del></small> <span class="d-block h5 text-primary text-lh-sm mb-0">$29.99</span> </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-group"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Emily Milda">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img2.jpg" alt="Image Description">
-                            </span> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="John O'nolan">
-                                <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img4.jpg" alt="Image Description">
-                            </span> </div>
-                                            </div>
-                                            <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 5 lessons </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 8h 12m </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-signal mr-1"></i> Beginner </div>
-                                        </div>
-                                        <p class="font-size-1 text-body mb-0">Learn coding block from basics. Make your first 4 blocks in Unreal engine. Interactive tutorial.</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- End Card -->
-                            <!-- Card -->
-                            <a class="d-block border-bottom pb-5 mb-5" href="course-description.html">
-                                <div class="row mx-md-n2">
-                                    <div class="col-md-4 px-md-2 mb-3 mb-md-0">
-                                        <div class="position-relative"> <img class="img-fluid w-100 rounded" src="https://gostreamlabs.com/front/assets/svg/components/graphics-3.svg" alt="Image Description">
-                                            <div class="position-absolute bottom-0 left-0 mb-3 ml-4">
-                                                <div class="d-flex align-items-center flex-wrap">
-                                                    <ul class="list-inline mt-n1 mb-0 mr-2">
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                        <li class="list-inline-item mx-0"><img src="https://gostreamlabs.com/front/assets/svg/illustrations/star.svg" alt="Review rating" width="14"></li>
-                                                    </ul> <span class="d-inline-block">
-                                <small class="font-weight-bold text-white mr-1">4.9</small>
-                                <small class="text-white-70">(961 reviews)</small>
-                            </span> </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="media mb-2">
-                                            <div class="media-body mr-7">
-                                                <h3 class="text-hover-primary">Creative Magazine Layout Design</h3> </div>
-                                            <div class="d-flex mt-1 ml-auto">
-                                                <div class="text-right"> <small class="d-block text-muted text-lh-sm"><del>$179.99</del></small> <span class="d-block h5 text-primary text-lh-sm mb-0">$129.99</span> </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start align-items-center small text-muted mb-2">
-                                            <div class="d-flex align-items-center"> <span class="avatar avatar-xs avatar-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hanna Wolfe">
-                            <img class="avatar-img" src="https://gostreamlabs.com/front/assets/img/100x100/img11.jpg" alt="Image Description">
-                            </span> </div>
-                                            <div class="ml-auto"> <i class="fa fa-book-reader mr-1"></i> 35 lessons </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-clock mr-1"></i> 21h </div> <span class="text-muted mx-2">|</span>
-                                            <div class="d-inline-block"> <i class="fa fa-signal mr-1"></i> All levels </div>
-                                        </div>
-                                        <p class="font-size-1 text-body mb-0">Master magazine layout design and publish awesome layout designs.</p>
-                                    </div>
-                                </div>
-                            </a>
                             <!-- End Card -->
                             <!-- Pagination -->
                             <div class="d-flex justify-content-between align-items-center mt-8"> <small class="d-none d-sm-inline-block text-body">Page 1 out of 6</small>
@@ -652,6 +425,7 @@ export default (list, HEADER, FOOTER)=>{
                 });
             });
             </script>
+            <script src="/js/course.js"></script>
             <!-- IE Support -->
             <script>
             if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="https://gostreamlabs.com/front/assets/vendor/polifills.js"><\/script>');

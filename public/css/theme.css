@@ -23886,3 +23886,65 @@ a:hover .text-hover-primary {
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
+
+
+.cbp-lazyload:after{
+  content: '';
+  position: absolute;
+  /* width: 34px;
+  height: 34px; */
+  width: 50px;
+  height: 50px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-animation: cbp-rotation .8s infinite linear;
+  animation: cbp-rotation .8s infinite linear;
+  border-left: 3px solid rgba(114,144,182,0.15);
+  border-right: 3px solid rgba(114,144,182,0.15);
+  border-bottom: 3px solid rgba(114,144,182,0.15);
+  /* border-top: 3px solid rgba(114,144,182,0.8); */
+  border-top: 3px solid rgba(255,255,255,0.8);
+  border-radius: 100%;
+}
+
+.cbp-lazyload {
+  position: relative;
+  background: #e7eaf3;
+  display: block;
+}
+
+.cbp-lazyload img {
+  opacity: 1;
+}
+
+.cbp-lazyload img[data-cbp-src] {
+  opacity: 0;
+}
+
+.cbp-lazyload img:not([data-cbp-src]) {
+  -webkit-transition: opacity .7s ease-in-out;
+  transition: opacity .7s ease-in-out;
+}
+
+.cbp-lazyload:after {
+  z-index: 0;
+}
+
+.fix-loading-box{
+  width: 264px;
+  height: 183px;
+}
+
+@keyframes cbp-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
