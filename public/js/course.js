@@ -36,7 +36,6 @@
         if(window.location.search.match('page') && window.location.search.split("=")[1]){
             pagination = parseInt(window.location.search.split("=")[1]);
         }
-        let pagination = window.location.search.match('page');
         let getVideoDuration  = (time)=>{
             // let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
             let getFormat = (t)=>(t<10) ? ``+t.toString() : t;
