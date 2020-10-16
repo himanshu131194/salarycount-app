@@ -1,4 +1,13 @@
 export default (list, HEADER, FOOTER)=>{
+    let listCourseFilters = ()=>{
+        let displayString = '';
+        return(
+            `<a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
+                Deep Reinforcement Learning
+                <span class="badge bg-soft-secondary badge-pill">18</span>
+            </a>`
+        )
+    }
     let listCourses = ()=>{
         let displayString = '', count=6;
         while(count>0){
@@ -84,7 +93,7 @@ export default (list, HEADER, FOOTER)=>{
                 <div class="container space-2 space-bottom-lg-3" data-select2-id="29">
                     <div class="row" data-select2-id="28">
                         <div class="col-lg-3 mb-5 mb-lg-0">
-                            <div class="navbar-expand-lg navbar-expand-lg-collapse-block">
+                        <div class="navbar-expand-lg navbar-expand-lg-collapse-block">
                                 <!-- Responsive Toggle Button -->
                                 <button type="button" class="navbar-toggler btn btn-block border py-3" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebarNav" data-toggle="collapse" data-target="#sidebarNav"> <span class="d-flex justify-content-between align-items-center">
                         <span class="h5 mb-0">View all categories</span> <span class="navbar-toggler-default">
@@ -98,56 +107,31 @@ export default (list, HEADER, FOOTER)=>{
                         </span> </span>
                                 </button>
                                 <!-- End Responsive Toggle Button -->
-                                <div id="sidebarNav" class="collapse navbar-collapse">
-                                    <div class="mt-5 mt-lg-0">
-                                        <h2 class="h4"><a class="text-inherit" href="#">Artificial Intelligence</a></h2>
-                                        <!-- Nav Link --><a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        AI Product Manager
-                        <span class="badge bg-soft-secondary badge-pill">30+</span>
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        AI Programming with Python
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        Computer Vision
-                        <span class="badge badge-success badge-pill ml-1">New</span>
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        Deep Learning
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        Deep Reinforcement Learning
-                        <span class="badge bg-soft-secondary badge-pill">18</span>
-                        </a>
-                                        <!-- End Nav Link -->
-                                        <!-- View More - Collapse -->
-                                        <div class="collapse" id="collapseSectionOne"> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                            Machine Learning
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                            Natural Language Processing
-                        </a> </div>
-                                        <!-- End View More - Collapse -->
-                                        <!-- Link -->
-                                        <a class="link link-collapse small font-size-1 font-weight-bold pt-1" data-toggle="collapse" href="#collapseSectionOne" role="button" aria-expanded="false" aria-controls="collapseSectionOne"> <span class="link-collapse-default">View more</span> <span class="link-collapse-active">View less</span> <span class="link-icon ml-1">+</span> </a>
-                                        <!-- End Link -->
+
+
+                            <div id="sidebarNav" class="collapse navbar-collapse">
+                                <div class="mt-5 mt-lg-0">
+                                    <h2 class="h4"><a class="text-inherit" href="#">Categoies</a></h2>
+                                    <!-- Nav Link -->
+                                    ${listCourseFilters()}
+                                    <!-- End Nav Link -->
+                                    <!-- View More - Collapse -->
+                                    <div class="collapse" id="collapseSectionOne"> 
+                                        <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
+                                            Machine Learning
+                                        </a> 
+                                        <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
+                                            Natural Language Processing
+                                        </a> 
                                     </div>
-                                    <div class="mt-5">
-                                        <h3 class="h4"><a class="text-inherit" href="#">Business</a></h3>
-                                        <!-- Nav Link --><a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        Business Analytics
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        Digital Marketing
-                        </a> <a class="dropdown-item d-flex justify-content-between align-items-center px-0" href="#">
-                        Marketing Analytics
-                        </a>
-                                        <!-- End Nav Link -->
-                                        <!-- View More - Collapse -->
-                                        <div class="collapse" id="collapseSectionThree"> <a class="nav-link" href="#">
-                            Predictive Analytics for Business
-                        </a> </div>
-                                        <!-- End View More - Collapse -->
-                                        <!-- Link -->
-                                        <a class="link link-collapse small font-size-1 font-weight-bold pt-1" data-toggle="collapse" href="#collapseSectionThree" role="button" aria-expanded="false" aria-controls="collapseSectionThree"> <span class="link-collapse-default">View more</span> <span class="link-collapse-active">View less</span> <span class="link-icon ml-1">+</span> </a>
-                                        <!-- End Link -->
-                                    </div>
+                                    <!-- End View More - Collapse -->
+                                    <!-- Link -->
+                                    <a class="link link-collapse small font-size-1 font-weight-bold pt-1" data-toggle="collapse" href="#collapseSectionOne" role="button" aria-expanded="false" aria-controls="collapseSectionOne"> <span class="link-collapse-default">View more</span> <span class="link-collapse-active">View less</span> <span class="link-icon ml-1">+</span> </a>
+                                    <!-- End Link -->
                                 </div>
                             </div>
+
+
                         </div>
                         <div class="col-lg-9" data-select2-id="27">
                             <!-- Filter -->

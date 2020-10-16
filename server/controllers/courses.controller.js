@@ -18,10 +18,15 @@ import headerTemplate from '../views/header.js'
 
 export default {
     index: async (req, res)=>{
-        console.log(req.query);
+        let categories = await Caterogies.aggregate([
+            { $match: { }},
+            { $project: { name: 1, count: 1 }}
+        ])
+        .cache({ key: 'allcategories'});
+
         const FOOTER = footerTemplate(),
               HEADER = headerTemplate();
-        res.send(rootTemplate(null, HEADER, FOOTER));
+        res.send(rootTemplate(categories, HEADER, FOOTER));
     },
 
     listOfAllCourses: async (req, res)=>{

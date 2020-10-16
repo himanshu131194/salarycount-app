@@ -5,7 +5,7 @@ import errorTemplate from './views/error-404.js'
 import postsRoutes from './routes/posts.routes'
 import coursesRoutes from './routes/courses.routes'
 import cors from 'cors'
-// import './services/cache'
+import './services/cache'
 
 const app = express();
 
