@@ -33,8 +33,8 @@
 
     window.onload = ()=>{
         let getVideoDuration  = (time)=>{
-            let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
-            
+            // let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
+            let getFormat = (t)=>(t<10) ? ``+t.toString() : t;
             time = parseInt(time);
             let h=0, m=0, s=0;
             if(time>3600){
@@ -47,7 +47,7 @@
                 m = parseInt(time%60); s = m > 0 ? m : 0;
                 m = parseInt(time/60);
             }
-            return (h===0) ? `${getFormat(m)}m ${getFormat(s)}s`: `${getFormat(h)}h ${getFormat(m)}m ${getFormat(s)}s`;
+            return (h===0) ? `${getFormat(m)}m`: `${getFormat(h)}h ${getFormat(m)}m`;
         }
         let updateList = (data)=>{
             let list = document.getElementsByClassName('course-blocks'), count = 0; 
@@ -56,7 +56,7 @@
                 block.getElementsByClassName('course-thumb')[0].src = data[count].poster.thumb.url;
                 block.getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
                 block.getElementsByClassName('total-lessons')[0].innerHTML = '<i class="fa fa-book-reader mr-1"></i> '+data[count].totalLessons+ ' lessons';
-                block.getElementsByClassName('total-time')[0].innerHTML = '<i class="fa fa-book-clock mr-1"></i> '+getVideoDuration(data[count].totalHours);
+                block.getElementsByClassName('total-time')[0].innerHTML = '<i class="fa fa-clock mr-1"></i> '+getVideoDuration(data[count].totalHours);
 
 
                 
