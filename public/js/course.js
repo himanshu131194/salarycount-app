@@ -62,8 +62,10 @@
             return (h===0) ? `${getFormat(m)}m`: `${getFormat(h)}h ${getFormat(m)}m`;
         }
         let updateList = (data)=>{
-            let list = document.getElementsByClassName('course-blocks'), count = 0; 
-            for(let block of list){
+            let list = document.getElementsByClassName('course-blocks'),
+                listCount = document.getElementsByClassName('course-blocks').length,
+                count = 0; 
+            for(let block; block<listCount; block++){
                 // console.log()
                 if(!data[count]){
                     console.log(data[count]);
@@ -71,17 +73,17 @@
                     // parent.removeChild(block);
                     continue;
                 }
-                block.getElementsByClassName('course-title')[0].innerHTML = data[count].title;
-                block.getElementsByClassName('course-thumb')[0].src = data[count].poster.thumb.url;
-                block.getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
-                block.getElementsByClassName('total-lessons')[0].innerHTML = '<i class="fa fa-book-reader mr-1"></i> '+data[count].totalLessons+ ' lessons';
-                block.getElementsByClassName('total-time')[0].innerHTML = '<i class="fa fa-clock mr-1"></i> '+getVideoDuration(data[count].totalHours);
+                list[block].getElementsByClassName('course-title')[0].innerHTML = data[count].title;
+                list[block].getElementsByClassName('course-thumb')[0].src = data[count].poster.thumb.url;
+                list[block].getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
+                list[block].getElementsByClassName('total-lessons')[0].innerHTML = '<i class="fa fa-book-reader mr-1"></i> '+data[count].totalLessons+ ' lessons';
+                list[block].getElementsByClassName('total-time')[0].innerHTML = '<i class="fa fa-clock mr-1"></i> '+getVideoDuration(data[count].totalHours);
 
 
                 
-                block.getElementsByClassName('course-thumb')[0].parentNode.classList.remove('cbp-lazyload');
+                list[block].getElementsByClassName('course-thumb')[0].parentNode.classList.remove('cbp-lazyload');
 
-                // block.getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
+                // list[block].getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
                 ++count;
             }
         }
