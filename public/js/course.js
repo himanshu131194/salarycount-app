@@ -65,7 +65,8 @@
             let list = document.getElementsByClassName('course-blocks'), count = 0; 
             for(let block of list){
                 if(!data[count]){
-                    block.parentNode.removeChild(block);
+                    let parent = block.parentNode;
+                    parent.removeChild(block);
                     continue;
                 }
                 block.getElementsByClassName('course-title')[0].innerHTML = data[count].title;
