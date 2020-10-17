@@ -65,7 +65,7 @@
             let list = document.getElementsByClassName('course-blocks'),
                 listCount = document.getElementsByClassName('course-blocks').length,
                 count = 0; 
-            for(let block; block<listCount; block++){
+            for(let block=0; block<listCount; block++){
                 // console.log()
                 if(!data[count]){
                     console.log(data[count]);
