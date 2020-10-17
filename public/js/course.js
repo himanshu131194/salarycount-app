@@ -69,6 +69,8 @@
                 if(!data[block]){
                     var select = document.getElementById('list_course');
                     console.log(select);
+                    console.log(block);
+                    console.log(select.lastChild);
                     select.removeChild(select.lastChild);
                     continue;
                 }
