@@ -80,19 +80,6 @@
             updateList(data);
         })   
         //END LOAD COURSES
-
-        //FILTERS 
-        let loadFilters = (data)=>{
-            console.log(data);
-        }
-        fetch('/filters-list')
-        .then((res)=>{
-            return res.json()
-        })
-        .then(({data})=>{
-            console.log(data);
-            loadFilters(data)
-        })   
     }
 
 

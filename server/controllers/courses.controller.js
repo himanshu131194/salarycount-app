@@ -20,9 +20,17 @@ export default {
     index: async (req, res)=>{
         let categories = await Caterogies.aggregate([
             { $match: { }},
-            { $project: { name: 1, count: 1 }}
+            { $project: { name: 1, count: 1, url: 1 }}
         ])
         .cache({ key: 'allcategories'});
+
+        // for(let x of categories){
+        //     let categoryURL = x.name.replace(/ /g, '-');
+        //     await Caterogies.findOneAndUpdate({ _id: mongoose.Types.ObjectId(x._id) }, {
+        //         url : categoryURL
+        //     });
+        // }
+        
 
         const FOOTER = footerTemplate(),
               HEADER = headerTemplate();
@@ -153,7 +161,7 @@ export default {
             })
         }
         let filterObj = {};
-        filterObj = { title : {$regex: "^" + title.toLowerCase() + ".*", $options: 'i'} };
+        filterObj = { title : {$regex: "^.*" + title.toLowerCase() + ".*", $options: 'i'} };
 
         console.log(filterObj);
 

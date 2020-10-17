@@ -17,6 +17,9 @@ const Categories = new mongoose.Schema({
             ref: 'sub_categories'
         }
     ],
+    url: {
+        type: String
+    },
     created: {
         type: Date,
         default: Date.now
