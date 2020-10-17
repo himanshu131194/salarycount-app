@@ -37,10 +37,10 @@
         if({
 
         })
-        if(window.locationbar.href.match(/.*\/courses\?page=[\d]$/ig)){
+        if(window.location.href.match(/.*\/courses\?page=[\d]$/ig)){
             pagination = parseInt(window.location.search.split("=")[1]);
         }
-        if(window.locationbar.href.match(/.*\/courses\?page=[\d]+&category=[\w-&]+$/ig)){
+        if(window.location.href.match(/.*\/courses\?page=[\d]+&category=[\w-&]+$/ig)){
             let params = window.location.search.split("&");
                 pagination = parseInt(params[0].split("=")[1]);
                 category = parseInt(params[0].split("=")[1]);
