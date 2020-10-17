@@ -64,6 +64,7 @@
         let updateList = (data)=>{
             let list = document.getElementsByClassName('course-blocks'), count = 0; 
             for(let block of list){
+                console.log(data[count]);
                 if(!data[count]){
                     let parent = block.parentNode;
                     parent.removeChild(block);
