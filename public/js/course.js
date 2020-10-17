@@ -66,7 +66,7 @@
                 listCount = document.getElementsByClassName('course-blocks').length,
                 count = 0;
             let removeCount = listCount; 
-            for(let block=0; block<listCount-1; block++){
+            for(let block=0; block<listCount; block++){
                 // console.log()
                 if(!data[count]){
                     var select = document.getElementById('list_course');
