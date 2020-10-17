@@ -42,7 +42,7 @@
             let params = window.location.search.split("&");
                 pagination = parseInt(params[0].split("=")[1]);
                 category = (params[1].split("=")[1]).trim();
-                url += "?limit=6&offset="+(pagination*6)+"&category="+category;
+                url += "?limit=6&offset="+((pagination-1)*6)+"&category="+category;
         }
         let getVideoDuration  = (time)=>{
             // let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
