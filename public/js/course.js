@@ -65,11 +65,11 @@
             let list = document.getElementsByClassName('course-blocks'), count = 0; 
             for(let block of list){
                 console.log(data[count]);
-                if(!data[count]){
-                    let parent = block.parentNode;
-                    parent.removeChild(block);
-                    continue;
-                }
+                // if(!data[count]){
+                //     let parent = block.parentNode;
+                //     parent.removeChild(block);
+                //     continue;
+                // }
                 block.getElementsByClassName('course-title')[0].innerHTML = data[count].title;
                 block.getElementsByClassName('course-thumb')[0].src = data[count].poster.thumb.url;
                 block.getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
