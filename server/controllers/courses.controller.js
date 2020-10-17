@@ -30,19 +30,22 @@ export default {
     },
 
     listOfAllCourses: async (req, res)=>{
-        const { offset:skip=0, limit=6, filters={} } = req.query;
+        console.log(req.query);
+        const { offset:skip=0, limit=6, filters={}, category='' } = req.query;
         let filterObj = {}, sort = { total_videos_count: -1 };
 
         if(filters.sort){
            sort = filters.sort;
         }
-        if(filters.condition){
-           filterObj = { name : {$regex: "^" + filters.condition.searchKey.toLowerCase() + ".*"} };
+        
+        if(category!==''){
+            let res = await Caterogies.findOne({ url: category });
+            filterObj.category = res._id;
         }
 
         try {
            const listCourses = await Courses.aggregate([
-               { $match : {} },
+               { $match : filterObj },
                {
                     $lookup: {
                         from: 'authors',

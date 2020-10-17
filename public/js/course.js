@@ -33,15 +33,16 @@
 
     window.onload = ()=>{
         //LODA COURSES
-        let pagination = 1, category = '';
+        let pagination = 1, category = '', url='/list-courses';
         if(window.location.href.match(/.*\/courses\?page=[\d]+$/ig)){
             pagination = parseInt(window.location.search.split("=")[1]);
+            url += "?limit=6&offset="+(pagination*6);
         }
         if(window.location.href.match(/.*\/courses\?page=[\d]+&category=[\w-&]+$/ig)){
             let params = window.location.search.split("&");
                 pagination = parseInt(params[0].split("=")[1]);
                 category = (params[1].split("=")[1]).trim();
-                console.log(category);
+                url += "?limit=6&offset="+(pagination*6)+"&category="+category;
         }
         let getVideoDuration  = (time)=>{
             // let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
@@ -77,14 +78,14 @@
                 ++count;
             }
         }
-        fetch('/list-courses?limit=6&offset='+(pagination*6))
-        .then((res)=>{
-            return res.json()
-        })
-        .then(({data})=>{
-            console.log(data);
-            updateList(data);
-        })   
+        fetch(url)
+            .then((res)=>{
+                return res.json()
+            })
+            .then(({data})=>{
+                console.log(data);
+                updateList(data);
+            })   
         //END LOAD COURSES
 
     }
