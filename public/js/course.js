@@ -43,7 +43,7 @@
         if(window.location.href.match(/.*\/courses\?page=[\d]+&category=[\w-&]+$/ig)){
             let params = window.location.search.split("&");
                 pagination = parseInt(params[0].split("=")[1]);
-                category = parseInt(params[0].split("=")[1]);
+                category = parseInt(params[1].split("=")[1]);
         }
         let getVideoDuration  = (time)=>{
             // let getFormat = (t)=>(t<10) ? `0`+t.toString() : t;
