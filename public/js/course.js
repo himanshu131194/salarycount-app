@@ -64,13 +64,16 @@
         let updateList = (data)=>{
             let list = document.getElementsByClassName('course-blocks'),
                 listCount = document.getElementsByClassName('course-blocks').length,
-                count = 0; 
+                count = 0;
+            let removeCount = listCount; 
             for(let block=0; block<listCount; block++){
                 // console.log()
                 if(!data[count]){
-                    console.log(data[count]);
-                    let parent = list[block].parentNode;
-                    parent.removeChild(list[block]);
+                    var select = document.getElementsByClassName('course-blocks');
+                    select.removeChild(select.lastChild);
+                    // console.log(data[count]);
+                    // let parent = list[block].parentNode;
+                    // parent.removeChild(list[block]);
                     continue;
                 }
                 list[block].getElementsByClassName('course-title')[0].innerHTML = data[count].title;
