@@ -64,10 +64,11 @@
         let updateList = (data)=>{
             let list = document.getElementsByClassName('course-blocks'),
                 listCount = document.getElementsByClassName('course-blocks').length;
-                
+
             for(let block=0; block<listCount; block++){
                 if(!data[block]){
                     var select = document.getElementById('list_course');
+                    console.log(select);
                     select.removeChild(select.lastChild);
                     continue;
                 }
