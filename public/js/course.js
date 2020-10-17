@@ -69,8 +69,8 @@
                 // console.log()
                 if(!data[count]){
                     console.log(data[count]);
-                    // let parent = block.parentNode;
-                    // parent.removeChild(block);
+                    let parent = list[block].parentNode;
+                    parent.removeChild(list[block]);
                     continue;
                 }
                 list[block].getElementsByClassName('course-title')[0].innerHTML = data[count].title;
