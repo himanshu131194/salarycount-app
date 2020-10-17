@@ -36,7 +36,7 @@
         let pagination = 1, category = '', url='/list-courses';
         if(window.location.href.match(/.*\/courses\?page=[\d]+$/ig)){
             pagination = parseInt(window.location.search.split("=")[1]);
-            url += "?limit=6&offset="+(pagination*6);
+            url += "?limit=6&offset="+((pagination-1)*6);
         }
         if(window.location.href.match(/.*\/courses\?page=[\d]+&category=[\w-&]+$/ig)){
             let params = window.location.search.split("&");

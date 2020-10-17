@@ -40,7 +40,7 @@ export default (listCategories, HEADER, FOOTER)=>{
                     <div class="col-md-8">
                         <div class="media mb-2">
                             <div class="media-body">
-                                <h3 class="text-hover-primary course-title text-uppercase">Complete Python Bootcamp: Go from zero to hero in Python 3</h3> 
+                                <h3 class="text-hover-primary course-title text-uppercase"></h3> 
                             </div>
                         </div>
                         <div class="d-flex justify-content-start align-items-center small text-muted mb-2">

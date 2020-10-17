@@ -24,6 +24,10 @@ export default {
         ])
         .cache({ key: 'allcategories'});
 
+        let s = await Courses.find({ category : mongoose.Types.ObjectId("5f7038746dd75df4e428927d") });
+
+        console.log(s);
+
         const FOOTER = footerTemplate(),
               HEADER = headerTemplate();
         res.send(rootTemplate(categories, HEADER, FOOTER));
@@ -37,7 +41,7 @@ export default {
         if(filters.sort){
            sort = filters.sort;
         }
-        
+
         if(category!==''){
             let res = await Caterogies.findOne({ url: category });
             filterObj.category = res._id;
