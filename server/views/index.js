@@ -179,7 +179,9 @@ export default (listCategories, HEADER, FOOTER)=>{
                             </div>
                             <!-- End Filter -->
                             <!-- Card -->
-                            ${listCourses()}
+                            <div id="list_course">
+                                ${listCourses()}
+                            </div>
                             <!-- End Card -->
                             <!-- Card -->
                             <!-- End Card -->

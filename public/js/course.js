@@ -69,7 +69,7 @@
             for(let block=0; block<listCount; block++){
                 // console.log()
                 if(!data[count]){
-                    var select = document.getElementsByClassName('course-blocks')[0];
+                    var select = document.getElementById('list_course');
                     select.removeChild(select.lastChild);
                     // console.log(data[count]);
                     // let parent = list[block].parentNode;
