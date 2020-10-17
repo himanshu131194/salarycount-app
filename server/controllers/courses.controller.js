@@ -24,14 +24,6 @@ export default {
         ])
         .cache({ key: 'allcategories'});
 
-        // for(let x of categories){
-        //     let categoryURL = x.name.replace(/ /g, '-');
-        //     await Caterogies.findOneAndUpdate({ _id: mongoose.Types.ObjectId(x._id) }, {
-        //         url : categoryURL
-        //     });
-        // }
-        
-
         const FOOTER = footerTemplate(),
               HEADER = headerTemplate();
         res.send(rootTemplate(categories, HEADER, FOOTER));
