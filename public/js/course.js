@@ -34,9 +34,6 @@
     window.onload = ()=>{
         //LODA COURSES
         let pagination = 1, category = '';
-        if({
-
-        })
         if(window.location.href.match(/.*\/courses\?page=[\d]+$/ig)){
             pagination = parseInt(window.location.search.split("=")[1]);
         }
