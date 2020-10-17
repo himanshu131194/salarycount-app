@@ -65,15 +65,10 @@
             let list = document.getElementsByClassName('course-blocks'),
                 listCount = document.getElementsByClassName('course-blocks').length,
                 count = 0;
-            let removeCount = listCount; 
             for(let block=0; block<listCount; block++){
-                // console.log()
-                if(!data[count]){
+                if(!data[block]){
                     var select = document.getElementById('list_course');
                     select.removeChild(select.lastChild);
-                    // console.log(data[count]);
-                    // let parent = list[block].parentNode;
-                    // parent.removeChild(list[block]);
                     continue;
                 }
                 list[block].getElementsByClassName('course-title')[0].innerHTML = data[count].title;
@@ -81,13 +76,7 @@
                 list[block].getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
                 list[block].getElementsByClassName('total-lessons')[0].innerHTML = '<i class="fa fa-book-reader mr-1"></i> '+data[count].totalLessons+ ' lessons';
                 list[block].getElementsByClassName('total-time')[0].innerHTML = '<i class="fa fa-clock mr-1"></i> '+getVideoDuration(data[count].totalHours);
-
-
-                
                 list[block].getElementsByClassName('course-thumb')[0].parentNode.classList.remove('cbp-lazyload');
-
-                // list[block].getElementsByClassName('course-teaser')[0].innerHTML = data[count].summary;
-                ++count;
             }
         }
         fetch(url)
