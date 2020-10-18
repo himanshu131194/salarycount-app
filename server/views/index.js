@@ -6,7 +6,7 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
         let next = `<li class="page-item">
                         <a class="page-link" href=${PAGINATION.NEXT_URL} aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span> </a>
                     </li>`;
-        let boxClass =  isbottom ? `d-flex justify-content-between align-items-center mt-8`: `d-flex justify-content-end align-items-center`;
+        let boxClass =  isbottom ? `d-flex justify-content-between align-items-center mt-3`: `d-flex justify-content-end align-items-center`;
         return(
             `<div class="${boxClass}"> 
                 ${isbottom ? `<small class="d-none d-sm-inline-block text-body">Page ${PAGINATION.CURRENT} out of ${PAGINATION.LAST}</small>` : ''}
