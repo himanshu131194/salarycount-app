@@ -27,7 +27,7 @@ export default {
         ])
         .cache({ key: 'allcategories'});
 
-        let [{count: totalCount}] = categories.filter((e)=> e.url===category),
+        let [{count: totalCount}={count: 466}] = categories.filter((e)=> e.url===category),
             lastCount = totalCount%6 == 0 ? totalCount/6 : +(Math.floor(totalCount/6))+1
        
 
@@ -38,7 +38,9 @@ export default {
 
         if(category){
             url += '&category='+category;
+            lastURL += '&category='+category;
             nextURL += '&category='+category;
+            prevURL += '&category='+category;
         }
         const FOOTER = footerTemplate(),
               HEADER = headerTemplate(),
@@ -79,7 +81,7 @@ export default {
                        as: 'authors'
                     }
                 },
-                { $sort: {created : 1}},
+                { $sort: {created : -1}},
                 { $skip: +skip },
                 { $limit: +limit }
            ]);

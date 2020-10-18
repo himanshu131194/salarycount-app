@@ -1,13 +1,15 @@
 export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
-    let setupPagination = ()=>{
+    let setupPagination = (isbottom=null)=>{
         let prev = `<li class="page-item ml-0">
                         <a class="page-link" href=${PAGINATION.PREV_URL} aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span> </a>
                     </li>`;
         let next = `<li class="page-item">
                         <a class="page-link" href=${PAGINATION.NEXT_URL} aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span> </a>
                     </li>`;
+        let boxClass =  isbottom ? `d-flex justify-content-between align-items-center mt-8`: `d-flex justify-content-end align-items-center`;
         return(
-            `<div class="d-flex justify-content-between align-items-center mt-8"> <small class="d-none d-sm-inline-block text-body">Page 1 out of 6</small>
+            `<div class="${boxClass}"> 
+                ${isbottom ? `<small class="d-none d-sm-inline-block text-body">Page ${PAGINATION.CURRENT} out of ${PAGINATION.LAST}</small>` : ''}
                 <nav aria-label="Page navigation">
                     <ul class="pagination mb-0">
                         ${PAGINATION.CURRENT>1? prev: ''}
@@ -37,7 +39,7 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
         let displayString = '', count=6;
         while(count>0){
             displayString += 
-            `<a class="d-block border-bottom pb-5 mb-5 course-blocks" href="course-description.html">
+            `<a class="d-block border-bottom pb-3 mb-3 course-blocks" href="course-description.html">
                 <div class="row mx-md-n2">
                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
                         <div class="position-relative fix-loading-box cbp-lazyload"> 
@@ -154,12 +156,9 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
                         </div>
                         <div class="col-lg-9" data-select2-id="27">
                             <!-- Filter -->
-                            <div class="border-bottom pb-3 mb-5" data-select2-id="26">
-                                <div class="row justify-content-md-start align-items-md-center">
-                                    <div class="col-md-4 mb-3 mb-md-0">
-                                        <p class="font-size-1 mr-md-auto mb-0"><span class="text-dark font-weight-bold">195 courses</span> to get started</p>
-                                    </div>
-                                    <div class="col-md-8 text-md-right">
+                            <div class="border-bottom pb-3 mb-3" data-select2-id="26">
+                                <div class="row justify-content-md-between align-items-md-center">
+                                    <div class="col-md-6">
                                         <!-- Select -->
                                         <select class="js-custom-select"
                                             data-hs-select2-options='{
@@ -191,6 +190,9 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
                                         </select>
                                         <!-- End Select -->
                                     </div>
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        ${setupPagination()}
+                                    </div>
                                 </div>
                             </div>
                             <!-- End Filter -->
@@ -198,7 +200,7 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
                             <div id="list_course">${listCourses()}</div>
                             <!-- End Card -->
                             <!-- Pagination -->
-                             ${setupPagination()}
+                             ${setupPagination(true)}
                             <!-- End Pagination -->
                         </div>
                     </div>
