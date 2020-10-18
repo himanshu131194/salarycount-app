@@ -18,19 +18,40 @@ import headerTemplate from '../views/header.js'
 
 export default {
     index: async (req, res)=>{
+        console.log(req.query);
+        const { page=1, category=null } = req.query;
+        
         let categories = await Caterogies.aggregate([
             { $match: { }},
             { $project: { name: 1, count: 1, url: 1 }}
         ])
         .cache({ key: 'allcategories'});
 
-        let s = await Courses.find({ category : mongoose.Types.ObjectId("5f7038746dd75df4e428927d") });
+        let [{count: totalCount}] = categories.filter((e)=> e.url===category),
+            lastCount = totalCount%6 == 0 ? totalCount/6 : +(Math.floor(totalCount/6))+1
+       
 
-        console.log(s);
+        let url = '/courses?page='+page, 
+            nextURL = '/courses?page='+(+page+1),
+            lastURL = '/courses?page='+(lastCount),
+            prevURL = '/courses?page='+(+page-1)
 
+        if(category){
+            url += '&category='+category;
+            nextURL += '&category='+category;
+        }
         const FOOTER = footerTemplate(),
-              HEADER = headerTemplate();
-        res.send(rootTemplate(categories, HEADER, FOOTER));
+              HEADER = headerTemplate(),
+              PAGINATION = { 
+                  CURRENT : +page,
+                  NEXT : +page+1,      
+                  LAST: lastCount,            
+                  CURRENT_URL : url,
+                  NEXT_URL : nextURL,
+                  LAST_URL: lastURL,
+                  PREV_URL : prevURL
+              };
+        res.send(rootTemplate(categories, HEADER, FOOTER, PAGINATION));
     },
 
     listOfAllCourses: async (req, res)=>{
@@ -51,16 +72,16 @@ export default {
            const listCourses = await Courses.aggregate([
                { $match : filterObj },
                {
-                    $lookup: {
-                        from: 'authors',
-                        localField: 'authors',
-                        foreignField: '_id',
-                        as: 'authors'
+                   $lookup: {
+                       from: 'authors',
+                       localField: 'authors',
+                       foreignField: '_id',
+                       as: 'authors'
                     }
                 },
-               { $sort: {created : 1}},
-               { $skip: +skip },
-               { $limit: +limit },
+                { $sort: {created : 1}},
+                { $skip: +skip },
+                { $limit: +limit }
            ]);
            res.send({
                data: listCourses

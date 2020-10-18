@@ -1,4 +1,26 @@
-export default (listCategories, HEADER, FOOTER)=>{
+export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
+    let setupPagination = ()=>{
+        let prev = `<li class="page-item ml-0">
+                        <a class="page-link" href=${PAGINATION.PREV_URL} aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span> </a>
+                    </li>`;
+        let next = `<li class="page-item">
+                        <a class="page-link" href=${PAGINATION.NEXT_URL} aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span> </a>
+                    </li>`;
+        return(
+            `<div class="d-flex justify-content-between align-items-center mt-8"> <small class="d-none d-sm-inline-block text-body">Page 1 out of 6</small>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination mb-0">
+                        ${PAGINATION.CURRENT>1? prev: ''}
+                        <li class="page-item active"><a class="page-link" href=${PAGINATION.CURRENT_URL}>${PAGINATION.CURRENT}</a></li>
+                        <li class="page-item"><a class="page-link" href=${PAGINATION.NEXT_URL}>${PAGINATION.NEXT}</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href=${PAGINATION.LAST_URL}>${PAGINATION.LAST}</a></li>
+                        ${PAGINATION.CURRENT!==PAGINATION.LAST? next: ''}
+                    </ul>
+                </nav>
+            </div>`
+        )
+    }
     let listCourseFilters = ()=>{
         let displayString = '';
         listCategories.forEach((list)=>{
@@ -168,198 +190,26 @@ export default (listCategories, HEADER, FOOTER)=>{
                                             <option value="3">Lowest price</option>
                                         </select>
                                         <!-- End Select -->
-                                        <!-- Select -->
-                                        
-                                        <!-- End Select -->
-                                        <!-- Select -->
-                                        
-                                        <!-- End Select -->
                                     </div>
                                 </div>
                             </div>
                             <!-- End Filter -->
                             <!-- Card -->
-                            <div id="list_course">
-                                ${listCourses()}
-                            </div>
-                            <!-- End Card -->
-                            <!-- Card -->
-                            <!-- End Card -->
-                            <!-- Card -->
+                            <div id="list_course">${listCourses()}</div>
                             <!-- End Card -->
                             <!-- Pagination -->
-                            <div class="d-flex justify-content-between align-items-center mt-8"> <small class="d-none d-sm-inline-block text-body">Page 1 out of 6</small>
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination mb-0">
-                                        <li class="page-item ml-0">
-                                            <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span> </a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span> </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+                             ${setupPagination()}
                             <!-- End Pagination -->
                         </div>
                     </div>
                 </div>
                 <!-- End Courses Section -->
                 <!-- CTA Section -->
-                <div class="container space-bottom-lg-1">
-                    <div class="text-center py-6" style="background: url(https://gostreamlabs.com/front/assets/svg/components/abstract-shapes-19.svg) center no-repeat;">
-                        <h2>Find the right learning path for you</h2>
-                        <p>Answer a few questions and match your goals to our programs.</p> <span class="d-block mt-5">
-                <a class="btn btn-primary transition-3d-hover" href="#">Explore by Category</a>
-                </span> </div>
-                </div>
                 <!-- End CTA Section -->
             </main>
             <!-- ========== END MAIN CONTENT ========== -->
             <!-- ========== FOOTER ========== -->
-            <footer class="bg-light">
-                <div class="container">
-                    <div class="space-top-2 space-bottom-1 space-bottom-lg-2">
-                        <div class="row justify-content-lg-between">
-                            <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
-                                <!-- Logo -->
-                                <div class="mb-4">
-                                    <a href="index.html" aria-label="Front"> <img class="brand" src="https://gostreamlabs.com/front/assets/svg/logos/logo.svg" alt="Logo"> </a>
-                                </div>
-                                <!-- End Logo -->
-                                <!-- Nav Link -->
-                                <ul class="nav nav-sm nav-x-0 flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link media" href="javascript:;"> <span class="media">
-                            <span class="fas fa-location-arrow mt-1 mr-2"></span> <span class="media-body">
-                            153 Williamson Plaza, Maggieberg
-                            </span> </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link media" href="tel:1-062-109-9222"> <span class="media">
-                            <span class="fas fa-phone-alt mt-1 mr-2"></span> <span class="media-body">
-                            +1 (062) 109-9222
-                            </span> </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- End Nav Link -->
-                            </div>
-                            <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
-                                <h5>Company</h5>
-                                <!-- Nav Link -->
-                                <ul class="nav nav-sm nav-x-0 flex-column">
-                                    <li class="nav-item"><a class="nav-link" href="../pages/about-agency.html">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../pages/careers.html">Careers <span class="badge badge-primary ml-1">We're hiring</span></a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../blog/newsroom.html">Blog</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../pages/customers.html">Customers</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../pages/hire-us.html">Hire us</a></li>
-                                </ul>
-                                <!-- End Nav Link -->
-                            </div>
-                            <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
-                                <h5>Features</h5>
-                                <!-- Nav Link -->
-                                <ul class="nav nav-sm nav-x-0 flex-column">
-                                    <li class="nav-item"><a class="nav-link" href="#">Press</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Release notes</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Integrations</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-                                </ul>
-                                <!-- End Nav Link -->
-                            </div>
-                            <div class="col-6 col-md-3 col-lg">
-                                <h5>Documentation</h5>
-                                <!-- Nav Link -->
-                                <ul class="nav nav-sm nav-x-0 flex-column">
-                                    <li class="nav-item"><a class="nav-link" href="mailto:example@gmail.com">Support</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="https://gostreamlabs.com/front/documentation/index.html">Docs</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="../pages/status.html">Status</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">API Reference</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Tech Requirements</a></li>
-                                </ul>
-                                <!-- End Nav Link -->
-                            </div>
-                            <div class="col-6 col-md-3 col-lg">
-                                <h5>Resources</h5>
-                                <!-- Nav Link -->
-                                <ul class="nav nav-sm nav-x-0 flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"> <span class="media align-items-center">
-                            <i class="fa fa-info-circle mr-2"></i>
-                            <span class="media-body">Help</span> </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"> <span class="media align-items-center">
-                            <i class="fa fa-user-circle mr-2"></i>
-                            <span class="media-body">Your Account</span> </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- End Nav Link -->
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="my-0">
-                    <div class="space-1">
-                        <div class="row align-items-md-center mb-7">
-                            <div class="col-md-6 mb-4 mb-md-0">
-                                <!-- Nav Link -->
-                                <ul class="nav nav-sm nav-x-0 align-items-center">
-                                    <li class="nav-item"> <a class="nav-link" href="../pages/privacy.html">Privacy &amp; Policy</a> </li>
-                                    <li class="nav-item opacity mx-3">/</li>
-                                    <li class="nav-item"> <a class="nav-link" href="../pages/terms.html">Terms</a> </li>
-                                    <li class="nav-item opacity mx-3">/</li>
-                                    <li class="nav-item"> <a class="nav-link" href="#">Site Map</a> </li>
-                                </ul>
-                                <!-- End Nav Link -->
-                            </div>
-                            <div class="col-md-6 text-md-right">
-                                <ul class="list-inline mb-0">
-                                    <!-- Social Networks -->
-                                    <li class="list-inline-item">
-                                        <a class="btn btn-xs btn-icon btn-soft-secondary" href="#"> <i class="fab fa-facebook-f"></i> </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="btn btn-xs btn-icon btn-soft-secondary" href="#"> <i class="fab fa-google"></i> </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="btn btn-xs btn-icon btn-soft-secondary" href="#"> <i class="fab fa-twitter"></i> </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a class="btn btn-xs btn-icon btn-soft-secondary" href="#"> <i class="fab fa-github"></i> </a>
-                                    </li>
-                                    <!-- End Social Networks -->
-                                    <!-- Language -->
-                                    <li class="list-inline-item">
-                                        <div class="hs-unfold">
-                                            <a class="js-hs-unfold-invoker dropdown-toggle btn btn-xs btn-soft-secondary" href="javascript:;" data-hs-unfold-options="{
-                            &quot;target&quot;: &quot;#footerLanguage&quot;,
-                            &quot;type&quot;: &quot;css-animation&quot;,
-                            &quot;animationIn&quot;: &quot;slideInDown&quot;
-                            }" data-hs-unfold-target="#footerLanguage" data-hs-unfold-invoker=""> <img class="dropdown-item-icon" src="https://gostreamlabs.com/front/assets/vendor/flag-icon-css/flags/4x3/us.svg" alt="United States Flag"> <span>United States</span> </a>
-                                            <div id="footerLanguage" class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2 hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated hs-unfold-reverse-y" data-hs-target-height="372" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInDown" data-hs-unfold-content-animation-out="fadeOut" style="animation-duration: 300ms;"> <a class="dropdown-item active" href="#">English</a> <a class="dropdown-item" href="#">Deutsch</a> <a class="dropdown-item" href="#">Español</a> <a class="dropdown-item" href="#">Français</a> <a class="dropdown-item" href="#">Italiano</a> <a class="dropdown-item" href="#">日本語</a> <a class="dropdown-item" href="#">한국어</a> <a class="dropdown-item" href="#">Nederlands</a> <a class="dropdown-item" href="#">Português</a> <a class="dropdown-item" href="#">Русский</a> </div>
-                                        </div>
-                                    </li>
-                                    <!-- End Language -->
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Copyright -->
-                        <div class="w-md-75 text-lg-center mx-lg-auto">
-                            <p class="text-muted small">© Front. 2020 Htmlstream. All rights reserved.</p>
-                            <p class="text-muted small">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
-                        </div>
-                        <!-- End Copyright -->
-                    </div>
-                </div>
-            </footer>
+            ${FOOTER}
             <!-- ========== END FOOTER ========== -->
             <!-- Go to Top -->
             <a class="js-go-to go-to position-fixed animated hs-go-to-prevent-event fadeOutDown" href="javascript:;" style="right: 15px; bottom: -15px;" data-hs-go-to-options="{
