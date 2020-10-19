@@ -10,6 +10,7 @@
                 let a = document.createElement('a');
                     a.className = "nav-link pb-0 pt-2";
                     a.href = "#";
+                    list.title = list.title.replace(e.target.value, `<span class="text-dark font-weight-bold">${e.target.value}</span>`)
                     a.innerHTML = list.title;
                 document.getElementById('suggested_courses').append(a);
             })
@@ -67,10 +68,7 @@
 
             for(let block=0; block<listCount; block++){
                 if(!data[block]){
-                    var select = document.getElementById('list_course');
-                    console.log(select);
-                    console.log(block);
-                    console.log(select.lastChild);
+                    var select = document.getElementById('list_course').childNodes;
                     select.removeChild(select.lastChild);
                     continue;
                 }

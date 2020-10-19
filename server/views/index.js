@@ -160,34 +160,7 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
                                 <div class="row justify-content-md-between align-items-md-center">
                                     <div class="col-md-6">
                                         <!-- Select -->
-                                        <select class="js-custom-select"
-                                            data-hs-select2-options='{
-                                                "minimumResultsForSearch": "Infinity",
-                                                "customClass": "btn btn-sm btn-white dropdown-toggle mb-1",
-                                                "placeholder": "Skills",
-                                                "dropdownAutoWidth": true,
-                                                "width": "auto"
-                                              }'>
-                                            <option label="empty"></option>
-                                            <option value="1" selected>Beginner</option>
-                                            <option value="2">Intermediate</option>
-                                            <option value="3">Advanced</option>
-                                        </select>
-                                        <!-- End Select -->
-                                        <!-- Select -->
-                                        <select class="js-custom-select"
-                                            data-hs-select2-options='{
-                                                "minimumResultsForSearch": "Infinity",
-                                                "customClass": "btn btn-sm btn-white dropdown-toggle mb-1",
-                                                "placeholder": "Skills",
-                                                "dropdownAutoWidth": true,
-                                                "width": "auto"
-                                            }'>
-                                            <option label="empty"></option>
-                                            <option value="1" selected>Highest rated</option>
-                                            <option value="2">Newest</option>
-                                            <option value="3">Lowest price</option>
-                                        </select>
+                                        
                                         <!-- End Select -->
                                     </div>
                                     <div class="col-md-6 mb-3 mb-md-0">
