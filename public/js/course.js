@@ -1,6 +1,6 @@
 (function(){
     let suggestCourse = (e)=>{
-        if(e.target.value==''){
+        if(e.target.value=='' || e.target.value.length==1){
            document.getElementById('suggested_courses').innerHTML = '';
            return;
         }
