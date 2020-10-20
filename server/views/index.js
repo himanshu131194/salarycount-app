@@ -39,7 +39,7 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
         let displayString = '', count=6;
         while(count>0){
             displayString += 
-            `<a class="d-block border-bottom pb-3 mb-3 course-blocks" href="course-description.html">
+            `<a class="d-block border-bottom pb-3 mb-3 course-blocks" href="#">
                 <div class="row mx-md-n2">
                     <div class="col-md-4 px-md-2 mb-3 mb-md-0">
                         <div class="position-relative fix-loading-box cbp-lazyload"> 

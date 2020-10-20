@@ -72,6 +72,7 @@
                     select.removeChild(select.lastChild);
                     continue;
                 }
+                list[block].href = data[block].src;
                 list[block].getElementsByClassName('course-title')[0].innerHTML = data[block].title;
                 list[block].getElementsByClassName('course-thumb')[0].src = data[block].poster.thumb.url;
                 list[block].getElementsByClassName('course-teaser')[0].innerHTML = data[block].summary;

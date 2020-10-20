@@ -66,7 +66,7 @@ export default {
         }
 
         if(category!==''){
-            let res = await Caterogies.findOne({ url: category });
+            let res = await CoursesLive.findOne({ url: category });
             filterObj.category = res._id;
         }
 

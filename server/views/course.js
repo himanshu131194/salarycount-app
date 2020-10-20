@@ -170,7 +170,7 @@ export default (COURSE, HEADER, FOOTER)=>{
                                         <div class="card-body">
                                             <div class="mb-2"> 
                                                 <a class="btn btn-block btn-primary transition-3d-hover" href=${COURSE.s3Url} download>
-                                                 DOWNLOAD BUNDLE <i class="fas fa-download ml-1"></i>
+                                                 DOWNLOAD COURSE <i class="fas fa-download ml-1"></i>
                                                 </a> 
                                             </div>
                                         </div>
