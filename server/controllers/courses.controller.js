@@ -66,12 +66,12 @@ export default {
         }
 
         if(category!==''){
-            let res = await CoursesLive.findOne({ url: category });
+            let res = await Caterogies.findOne({ url: category });
             filterObj.category = res._id;
         }
 
         try {
-           const listCourses = await CoursesLive.aggregate([
+           const listCourses = await Courses.aggregate([
                { $match : filterObj },
                {
                    $lookup: {
