@@ -68,7 +68,7 @@
 
             for(let block=0; block<listCount; block++){
                 if(!data[block]){
-                    var select = document.getElementById('list_course').childNodes;
+                    var select = document.getElementById('list_course');
                     console.log(select.removeChild);
                     select.removeChild(select.lastChild);
                     continue;
