@@ -69,9 +69,11 @@
             for(let block=0; block<listCount; block++){
                 if(!data[block]){
                     var select = document.getElementById('list_course').childNodes;
+                    console.log(select.removeChild);
                     select.removeChild(select.lastChild);
                     continue;
                 }
+                list[block].href = "/courses"+data[block].courseUrl;
                 list[block].getElementsByClassName('course-title')[0].innerHTML = data[block].title;
                 list[block].getElementsByClassName('course-thumb')[0].src = data[block].poster.thumb.url;
                 list[block].getElementsByClassName('course-teaser')[0].innerHTML = data[block].summary;
