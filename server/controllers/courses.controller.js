@@ -71,7 +71,7 @@ export default {
         }
 
         try {
-           const listCourses = await Courses.aggregate([
+           const listCourses = await CoursesLive.aggregate([
                { $match : filterObj },
                {
                    $lookup: {
