@@ -27,7 +27,7 @@ export default {
         ])
         .cache({ key: 'allcategories'});
 
-        let [{count: totalCount}={count: 466}] = categories.filter((e)=> e.url===category),
+        let [{count: totalCount}={count: 1290}] = categories.filter((e)=> e.url===category),
             lastCount = totalCount%6 == 0 ? totalCount/6 : +(Math.floor(totalCount/6))+1
        
 
@@ -167,7 +167,8 @@ export default {
                      poster: 1,
                      s3Url: 1,
                      totalHours: 1,
-                     totalLessons: 1
+                     totalLessons: 1,
+                     previewURL: 1
                  }
              }
         ]);
