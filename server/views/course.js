@@ -157,7 +157,7 @@ export default (COURSE, HEADER, FOOTER)=>{
                                 <div id="stickyBlockStartPoint" class="col-md-5 col-lg-4 position-relative z-index-2">
                                     <div class="js-sticky-block card border" data-hs-sticky-block-options="{ &quot;parentSelector&quot;: &quot;#stickyBlockStartPoint&quot;, &quot;breakpoint&quot;: &quot;md&quot;, &quot;startPoint&quot;: &quot;#stickyBlockStartPoint&quot;, &quot;endPoint&quot;: &quot;#stickyBlockEndPoint&quot;, &quot;stickyOffsetTop&quot;: 12, &quot;stickyOffsetBottom&quot;: 12 }">
                                         <div class="position-relative p-1">
-                                            <a class="js-fancybox video-player" href="javascript:;" data-hs-fancybox-options="{ &quot;src&quot;: &quot;${COURSE.previewURL}&quot;, &quot;caption&quot;: &quot;Front - Responsive Website Template&quot;, &quot;speed&quot;: 700, &quot;buttons&quot;: [&quot;fullScreen&quot;, &quot;close&quot;], &quot;youtube&quot;: { &quot;autoplay&quot;: 1 } }"> 
+                                            <a class="js-fancybox video-player" href="javascript:;" data-hs-fancybox-options="{ &quot;src&quot;: &quot;${COURSE.previewUrl}&quot;, &quot;caption&quot;: &quot;Front - Responsive Website Template&quot;, &quot;speed&quot;: 700, &quot;buttons&quot;: [&quot;fullScreen&quot;, &quot;close&quot;], &quot;youtube&quot;: { &quot;autoplay&quot;: 1 } }"> 
                                              <img class="card-img-top" src=${COURSE.poster.thumb.url} alt="Image Description"> 
                                              <span class="video-player-btn video-player-centered text-center">
                                                 <span class="video-player-icon mb-2">

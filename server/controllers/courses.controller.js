@@ -168,7 +168,7 @@ export default {
                      s3Url: 1,
                      totalHours: 1,
                      totalLessons: 1,
-                     previewURL: 1
+                     previewUrl: 1
                  }
              }
         ]);
