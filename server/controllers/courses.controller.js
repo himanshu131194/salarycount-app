@@ -1,4 +1,3 @@
-
 import mongoose from 'mongoose'
 import Tags from '../models/courses/tags'
 import Courses from '../models/courses/courses'
@@ -7,14 +6,11 @@ import Caterogies from '../models/courses/categories'
 import subCaterogies from '../models/courses/sub_categories'
 import Videos from '../models/courses/videos'
 import CoursesLive from '../models/courses/courses_live'
-
 import rootTemplate from '../views/index'
 import errorTemplate from '../views/error-404.js'
 import courseTemplate from '../views/course.js'
 import footerTemplate from '../views/footer.js'
 import headerTemplate from '../views/header.js'
-
-
 
 export default {
     index: async (req, res)=>{
