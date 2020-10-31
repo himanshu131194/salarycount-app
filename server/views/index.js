@@ -93,6 +93,15 @@ export default (listCategories, HEADER, FOOTER, PAGINATION)=>{
         `<!DOCTYPE html>
         <html lang="en" data-select2-id="31">
         <head>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-W26DSWQVJV"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-W26DSWQVJV');
+            </script>
             <!-- Title -->
             <title>Course - Courses Listing Page | Front - Responsive Website Template</title>
             <!-- Required Meta Tags Always Come First -->

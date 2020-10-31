@@ -115,6 +115,14 @@ export default (COURSE, HEADER, FOOTER, PUBLIC_PATH)=>{
         `<!DOCTYPE html>
         <html lang="en">
         <head>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-W26DSWQVJV"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-W26DSWQVJV');
+            </script>
             <meta charset="utf-8">
             <title>Learn html and css 30 days</title>
             <meta name="description" content="Learn html and css 30 days">
