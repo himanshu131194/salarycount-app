@@ -1,7 +1,7 @@
 export default {
    env : process.env.NODE_ENV || 'development',
-   port : process.env.PORT || 8000,
-   API_URL: "http://localhost:8000",
+   port : process.env.PORT || 8080,
+   API_URL: "http://localhost:8080",
    // API_URL: "http://192.168.0.132:3000",
    // API_URL: "https://notinmood.com",
    // MONGO_URI : 'mongodb+srv://notinmood:notinmood123@cluster0-57jsn.mongodb.net/notinmood?retryWrites=true&w=majority',

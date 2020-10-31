@@ -137,7 +137,8 @@ export default {
 
     Course: async (req, res)=>{
         const FOOTER = footerTemplate(),
-              HEADER = headerTemplate();
+              HEADER = headerTemplate(),
+              PUBLIC_PATH = "https://salarycount.s3.ap-south-1.amazonaws.com";
         //GET COURSE URL 
         const { course_id } = req.params;
         console.log(course_id);
@@ -169,7 +170,7 @@ export default {
              }
         ]);
         console.log(course.lessons.videos.chapter_2.lessons);
-        res.send(courseTemplate(course, HEADER, FOOTER));
+        res.send(courseTemplate(course, HEADER, FOOTER, PUBLIC_PATH));
     },
 
     seachCoursesTitle: async (req, res)=>{

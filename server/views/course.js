@@ -1,4 +1,4 @@
-export default (COURSE, HEADER, FOOTER)=>{
+export default (COURSE, HEADER, FOOTER, PUBLIC_PATH)=>{
 
     let displayRating = (count)=>{
         let displayString = '';
@@ -116,18 +116,17 @@ export default (COURSE, HEADER, FOOTER)=>{
         <html lang="en">
         <head>
             <meta charset="utf-8">
-            <title>Detail | Basik - Bootstrap 4 Web Application</title>
-            <meta name="description" content="Responsive, Bootstrap, BS4">
+            <title>Learn html and css 30 days</title>
+            <meta name="description" content="Learn html and css 30 days">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>Course - Courses Listing Page | Front - Responsive Website Template</title>
             <!-- Font -->
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet">
             <!-- CSS Implementing Plugins -->
-            <link rel="stylesheet" href="/css/all.css">
-            <link rel="stylesheet" href="https://gostreamlabs.com/front/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
-            <link rel="stylesheet" href="https://gostreamlabs.com/front/assets/vendor/fancybox/dist/jquery.fancybox.min.css">
+            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/all.css">
+            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/hs-mega-menu.min.css">
+            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/jquery.fancybox.min.css">
             <!-- CSS Front Template -->
-            <link rel="stylesheet" href="/css/theme.css"> 
+            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/theme.css"> 
         </head>
         
         <body class="layout-column">
@@ -213,21 +212,21 @@ export default (COURSE, HEADER, FOOTER)=>{
                  ${FOOTER}
             </div>
             <!-- JS Global Compulsory -->
-            <script src="https://gostreamlabs.com/front/assets/vendor/jquery/dist/jquery.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/jquery.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/jquery-migrate.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/bootstrap.bundle.min.js"></script>
             <!-- JS Implementing Plugins -->
-            <script src="https://gostreamlabs.com/front/assets/vendor/hs-header/dist/hs-header.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/hs-sticky-block/dist/hs-sticky-block.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/vendor/clipboard/dist/clipboard.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs-header.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs-go-to.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs-unfold.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs-mega-menu.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs-sticky-block.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/jquery.fancybox.min.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/clipboard.min.js"></script>
             <!-- JS Front -->
-            <script src="https://gostreamlabs.com/front/assets/js/hs.core.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/js/hs.fancybox.js"></script>
-            <script src="https://gostreamlabs.com/front/assets/js/hs.clipboard.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs.core.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs.fancybox.js"></script>
+            <script src=${PUBLIC_PATH}+"/assets/js/hs.clipboard.js"></script>
             <!-- JS Plugins Init. -->
             <script>
             $(document).on('ready', function() {
