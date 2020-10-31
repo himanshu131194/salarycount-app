@@ -122,11 +122,11 @@ export default (COURSE, HEADER, FOOTER, PUBLIC_PATH)=>{
             <!-- Font -->
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet">
             <!-- CSS Implementing Plugins -->
-            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/all.css">
-            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/hs-mega-menu.min.css">
-            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="${PUBLIC_PATH}/assets/css/all.css">
+            <link rel="stylesheet" href="${PUBLIC_PATH}/assets/css/hs-mega-menu.min.css">
+            <link rel="stylesheet" href="${PUBLIC_PATH}/assets/css/jquery.fancybox.min.css">
             <!-- CSS Front Template -->
-            <link rel="stylesheet" href=${PUBLIC_PATH}+"/assets/css/theme.css"> 
+            <link rel="stylesheet" href="${PUBLIC_PATH}/assets/css/theme.css"> 
         </head>
         
         <body class="layout-column">
@@ -212,21 +212,21 @@ export default (COURSE, HEADER, FOOTER, PUBLIC_PATH)=>{
                  ${FOOTER}
             </div>
             <!-- JS Global Compulsory -->
-            <script src=${PUBLIC_PATH}+"/assets/js/jquery.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/jquery-migrate.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/bootstrap.bundle.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/jquery.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/jquery-migrate.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/bootstrap.bundle.min.js"></script>
             <!-- JS Implementing Plugins -->
-            <script src=${PUBLIC_PATH}+"/assets/js/hs-header.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/hs-go-to.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/hs-unfold.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/hs-mega-menu.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/hs-sticky-block.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/jquery.fancybox.min.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/clipboard.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs-header.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs-go-to.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs-unfold.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs-mega-menu.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs-sticky-block.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/jquery.fancybox.min.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/clipboard.min.js"></script>
             <!-- JS Front -->
-            <script src=${PUBLIC_PATH}+"/assets/js/hs.core.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/hs.fancybox.js"></script>
-            <script src=${PUBLIC_PATH}+"/assets/js/hs.clipboard.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs.core.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs.fancybox.js"></script>
+            <script src="${PUBLIC_PATH}/assets/js/hs.clipboard.js"></script>
             <!-- JS Plugins Init. -->
             <script>
             $(document).on('ready', function() {
