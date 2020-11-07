@@ -124,8 +124,8 @@ export default (COURSE, HEADER, FOOTER, PUBLIC_PATH)=>{
             gtag('config', 'G-W26DSWQVJV');
             </script>
             <meta charset="utf-8">
-            <title>Learn html and css 30 days</title>
-            <meta name="description" content="Learn html and css 30 days">
+            <title>${COURSE.title}</title>
+            <meta name="description" content="${COURSE.title}">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <!-- Font -->
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;display=swap" rel="stylesheet">
